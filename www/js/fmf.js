@@ -1,3 +1,9 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() {
+	alert(device.uuid);
+}
+
 //Create cool looking card after new entry
 
 $("#save-recipient").click(function() {
