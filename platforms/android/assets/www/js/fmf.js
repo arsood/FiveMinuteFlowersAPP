@@ -1,7 +1,11 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
-	alert(device.uuid);
+	if (device.uuid) {
+		alert(device.uuid);
+	} else {
+		alert("ugh");
+	}
 }
 
 //Create cool looking card after new entry

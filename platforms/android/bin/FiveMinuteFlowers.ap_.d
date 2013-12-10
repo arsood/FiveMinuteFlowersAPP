@@ -12,7 +12,6 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\r
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\res\drawable-mdpi\icon.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\res\drawable-xhdpi\icon.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www \
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\browse.html \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\config.xml \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\cordova.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\cordova_plugins.js \
@@ -24,6 +23,7 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\libs \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\phonegap.js \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\spec \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css\fmf.css \
@@ -326,6 +326,12 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\libs\jquery-mobile\images\icons-18-white.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\libs\jquery-mobile\images\icons-36-black.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\libs\jquery-mobile\images\icons-36-white.png \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res\icon \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res\screen \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res\icon\android \
