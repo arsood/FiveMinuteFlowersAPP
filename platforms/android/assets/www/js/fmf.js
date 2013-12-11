@@ -1,8 +1,8 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
-	$("#device").click(function() {
-		alert(device.uuid);
+function onDeviceReady() { //Function to work when device is up
+	$.get("http://emboldenmedia.com/apps/fmf/ajax.php", function(data) {
+		alert(data);
 	});
 }
 
@@ -108,3 +108,5 @@ $("#personalized-forward").click(function() {
 		$(".ajax-block").fadeOut();
 	}, 2000);
 });
+
+//} //Ending home work function

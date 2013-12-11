@@ -1,7 +1,11 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { //Function to work when device is up
+	$.get("http://emboldenmedia.com/apps/fmf/ajax.php", function(data) {
+		alert(data);
+	});
 }
+
 //Create cool looking card after new entry
 
 $("#save-recipient").click(function() {

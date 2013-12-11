@@ -16,6 +16,7 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\cordova.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\cordova_plugins.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\fonts \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\icon.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img \
@@ -30,6 +31,8 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css\helpers.css \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css\index.css \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css\main.css \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\fonts\ArchitectsDaughter.woff \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\fonts\Niconne.woff \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs\wizard-field-error.html \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flowers \
