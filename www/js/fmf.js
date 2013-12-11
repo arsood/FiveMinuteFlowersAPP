@@ -1,13 +1,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
-function onDeviceReady() {
-	if (device.uuid) {
-		alert(device.uuid);
-	} else {
-		alert("ugh");
-	}
+function onDeviceReady() { //Function to work when device is up
 }
-
 //Create cool looking card after new entry
 
 $("#save-recipient").click(function() {
@@ -110,3 +104,5 @@ $("#personalized-forward").click(function() {
 		$(".ajax-block").fadeOut();
 	}, 2000);
 });
+
+//} //Ending home work function

@@ -327,11 +327,14 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\libs\jquery-mobile\images\icons-36-black.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\libs\jquery-mobile\images\icons-36-white.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.device \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.device\www \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res\icon \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res\screen \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res\icon\android \
