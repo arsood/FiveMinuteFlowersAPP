@@ -109,4 +109,10 @@ $("#personalized-forward").click(function() {
 	}, 2000);
 });
 
-//} //Ending home work function
+//Scroll to occasions
+
+$("#for-occasion").click(function() {
+	$("body").animate({
+		scrollTop: $("#occasion-list").offset().top
+	}, 800);
+});
