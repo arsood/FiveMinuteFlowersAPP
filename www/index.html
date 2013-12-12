@@ -488,6 +488,126 @@
 </div>
 <!--/Single Flower Page-->
 
+<!--Payment Page-->
+<div data-role="page" id="payment">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <h3>
+        	FiveMinuteFlowers
+        </h3>
+    </div>
+    <div data-role="content">
+    	<div class="margin-top-10 txt-center">
+        	<strong>Enter Payment Information</strong>
+        </div>
+        <div class="margin-top-20">
+        	<select name="select-choice-1" data-native-menu="false">
+                <option value="choose-one" data-placeholder="true">Choose Saved Billing Address</option>
+                <option value="">219 E Crystal Cove Terrace, San Francisco, CA 94134</option>
+            </select>
+        </div>
+        <div id="billing-address" class="margin-top-20">
+        	<div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>First Name</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Last Name</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a margin-top-10">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing Address 1</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Billing Address 2</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing City</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Billing State</strong>
+                    </div>
+                    <div>
+                    	<select name="select-choice-1" data-native-menu="false">
+                            <option value="choose-one" data-placeholder="true">Choose State</option>
+                            <option value="california">California</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing Zipcode</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Country</strong>
+                    </div>
+                    <div>
+                    	<input type="text" value="USA" disabled />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                    	<input type="checkbox" name="save-billing-address" id="save-billing-address-button" class="custom" />
+                    	<label for="save-billing-address-button">Want to save this address for next time?</label>
+                	</fieldset>
+                </div>
+            </div>
+            <div class="medium-button">
+            	<a href="#" data-role="button" data-theme="b">Next Step</a>
+            </div>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Payment Page-->
+
 <script type="text/javascript" src="phonegap.js"></script>
 <script type="text/javascript" src="libs/jquery/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" src="libs/jquery-mobile/jquery.mobile-1.3.2.min.js"></script>
