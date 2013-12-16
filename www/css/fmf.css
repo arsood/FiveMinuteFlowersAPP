@@ -191,6 +191,14 @@
 	color:#900;
 }
 
+.flower-long-description {
+	width:100%;
+	text-align:justify;
+	text-justify:inter-word;
+	margin-left:auto;
+	margin-right:auto;
+}
+
 /*Browse Page*/
 
 .browse-block-container {
