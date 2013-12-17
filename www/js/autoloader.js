@@ -1,3 +1,7 @@
+/*
+This document loads all pages and handles all of the buttloads of AJAX calls :P
+*/
+
 //General loading functions
 
 function showLoader() {
@@ -16,6 +20,9 @@ function hideLoader() {
 
 $(document).on("pageshow", "#index", function() {
 	showLoader();
+});
+
+$(document).on("pagebeforeshow", "#index", function() {
 	$("#occasion-list").load("http://localhost/sites/five_minute/page_layouts.php?action=read&page-layout=index-categories", function() {
 		hideLoader();
 	});
@@ -37,6 +44,9 @@ function setSpecificFlower(flower) {
 
 $(document).on("pageshow", "#browse", function() {
 	showLoader();
+});
+
+$(document).on("pagebeforeshow", "#browse", function() {
 	$("#browse-page-title").html(localStorage.categoryChosen);
 	$("#browse-image-blocks").load("http://localhost/sites/five_minute/page_layouts.php?action=read&page-layout=browse-images&category=" + encodeURIComponent(localStorage.categoryChosen), function() {
 		hideLoader();
@@ -47,6 +57,9 @@ $(document).on("pageshow", "#browse", function() {
 
 $(document).on("pageshow", "#single", function() {
 	showLoader();
+});
+
+$(document).on("pagebeforeshow", "#single", function() {
 	$.get("http://localhost/sites/five_minute/ajax_interface.php?action=get-flower-info&arrangement=" + localStorage.specificFlower, function(data) {
 		var flowerData = $.parseJSON(data);
 		var flowerImageCode = flowerData["arrangement_code"];

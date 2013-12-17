@@ -1,8 +1,8 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { //Function to work when device is up
-	$.get("http://emboldenmedia.com/apps/fmf/ajax.php", function(data) {
-		alert(data);
+	$.post("http://emboldenmedia.com/apps/fmf/", { deviceID: device.uuid }, function(data) {
+		//Here we handle a response
 	});
 }
 
