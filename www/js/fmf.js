@@ -65,28 +65,30 @@ $("#start-over").click(function() {
 $(".wizard-flower-block img").click(function() {
 	$(".wizard-flower-block").attr("style", "");
 	$(this).parents(".wizard-flower-block").css("border", "#09C 3px solid");
+	$("#personal-flower-type").val($(this).attr("data-flower-type"));
 });
 
 //Change pointer height on show with a little animation
 
-$("#personalized").on("pageshow", function() {
-	var imageHeight = $(".personalized-image").height();
-	
-	//Ajax loader graphic
-	
-	$("#loader-graphic").css("margin-top", (imageHeight/2) - 50);
-	
-	//Image pointers and image information
-	
-	$(".personalized-pointer").animate({
-		"padding-top": (imageHeight/2) - 24
-	}, 500, function() {
-		setTimeout(function() {
-			$("#personalized-image-name").fadeIn("slow");
-			$("#personalized-image-price").fadeIn("slow");
-		}, 1000);
-	});
-});
+function renderPersonal() {
+	setTimeout(function() {
+		var imageHeight = $(".personalized-image").height();
+		//Ajax loader graphic
+		
+		$("#loader-graphic").css("margin-top", (imageHeight/2) - 50);
+		
+		//Image pointers and image information
+		
+		$(".personalized-pointer").animate({
+			"padding-top": (imageHeight/2) - 24
+		}, 500, function() {
+			setTimeout(function() {
+				$("#personalized-image-name").fadeIn("slow");
+				$("#personalized-image-price").fadeIn("slow");
+			}, 1000);
+		});
+	}, 500);
+}
 
 //Thumb ratings
 
@@ -98,15 +100,6 @@ $("#rating-up").click(function() {
 $("#rating-down").click(function() {
 	$(this).css("color", "#900");
 	$("#rating-up").attr("style", "");
-});
-
-//Show AJAX loader for fun
-
-$("#personalized-forward").click(function() {
-	$(".ajax-block").fadeIn();
-	setTimeout(function() {
-		$(".ajax-block").fadeOut();
-	}, 2000);
 });
 
 //Scroll to occasions

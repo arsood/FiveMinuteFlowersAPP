@@ -141,8 +141,8 @@
             <div class="margin-top-20 margin-bottom-10">
                 Select a desired budget:
             </div>
-            <select name="select-choice-1" data-native-menu="false">
-                <option value="choose-one" data-placeholder="true">Choose a budget</option>
+            <select id="personal-budget" name="select-choice-1" data-native-menu="false">
+                <option value="" data-placeholder="true">Choose a budget</option>
                 <option value="1">$</option>
                 <option value="2">$$</option>
                 <option value="3">$$$</option>
@@ -152,8 +152,8 @@
             <div class="margin-top-20 margin-bottom-10">
                 Select an occasion (optional):
             </div>
-            <select name="select-occasion" data-native-menu="false">
-                <option value="choose-one" data-placeholder="true">Choose an occasion</option>
+            <select id="personal-occasion" name="select-occasion" data-native-menu="false">
+                <option value="" data-placeholder="true">Choose an occasion</option>
                 <option value="Baby/Maternity">Baby/Maternity</option>
                 <option value="Birthday">Birthday</option>
                 <option value="Blooming Plants">Blooming Plants</option>
@@ -176,7 +176,7 @@
                 <div class="ui-grid-a margin-top-20">
                 	<div class="ui-block-a">
                     	<div class="wizard-flower-block">
-                        	<img src="img/flower_types/potted.jpg" />
+                        	<img src="img/flower_types/potted.jpg" data-flower-type="1" />
                             <div class="wizard-flower-block-title">
                             	Potted
                             </div>
@@ -184,7 +184,7 @@
                     </div>
                     <div class="ui-block-b">
                     	<div class="wizard-flower-block">
-                        	<img src="img/flower_types/short-bushy.jpg" />
+                        	<img src="img/flower_types/short-bushy.jpg" data-flower-type="2" />
                             <div class="wizard-flower-block-title">
                             	Short and Bushy
                             </div>
@@ -194,7 +194,7 @@
                 <div class="ui-grid-a margin-top-20">
                 	<div class="ui-block-a">
                     	<div class="wizard-flower-block">
-                        	<img src="img/flower_types/tall-skinny.jpg" />
+                        	<img src="img/flower_types/tall-skinny.jpg" data-flower-type="3" />
                             <div class="wizard-flower-block-title">
                             	Tall and Skinny
                             </div>
@@ -202,18 +202,19 @@
                     </div>
                     <div class="ui-block-b">
                     	<div class="wizard-flower-block">
-                        	<img src="img/flower_types/special.jpg" />
+                        	<img src="img/flower_types/special.jpg" data-flower-type="4" />
                             <div class="wizard-flower-block-title">
                             	Special Types
                             </div>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" id="personal-flower-type" value="" />
             </div>
             <!--/Flower Style Choices-->
             
             <div class="margin-top-20">
-            	<a href="#personalized" data-role="button" data-theme="b" data-transition="flip">View Personalized Options</a>
+            	<a data-role="button" data-theme="b" data-transition="flip" onClick="setPersonalizedOptions();">View Personalized Options</a>
             </div>
         	<div class="margin-top-10 medium-button">
         		<a id="start-over" href="#" data-role="button" data-mini="true">Start Over</a>
@@ -258,12 +259,12 @@
                         	Loading...
                         </div>
                     </div>
-                    <img src="img/flowers/FLO-00501_low.jpg" />
+                    <img id="personalized-image-pic" src="" />
                     <div class="big-image-name" id="personalized-image-name">
-                        Bouquet of Roses
+                        <!--AUTOLOADER HERE-->
                     </div>
                     <div class="big-image-price" id="personalized-image-price">
-                    	$139.99
+                    	<!--AUTOLOADER HERE-->
                     </div>
                 </div>
             </div>
@@ -281,8 +282,8 @@
             </div>
         </div>
         
-        <div class="flower-long-description margin-top-20">
-        	Pale blooms in delicate, tinted shades of white and peach accented with hypericum berries, and displayed in a decorative container create a pretty display that would make a lovely gift for a favorite friend, mother or grandmother.
+        <div id="personalized-image-desc" class="flower-long-description margin-top-20">
+        	<!--AUTOLOADER HERE-->
         </div>
         
         <div class="ui-grid-a margin-top-20">

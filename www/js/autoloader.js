@@ -71,3 +71,75 @@ $(document).on("pagebeforeshow", "#single", function() {
 		hideLoader();
 	});
 });
+
+//Set options for personalization wizard
+
+function setPersonalizedOptions() {
+	localStorage.personalName = $("#recipient-card-name").html();
+	localStorage.personalBudget = $("#personal-budget").val();
+	localStorage.personalOccasion = $("#personal-occasion").val();
+	localStorage.personalFlowerType = $("#personal-flower-type").val();
+	window.location = "#personalized";
+}
+
+//Get personalized recommendations
+
+$(document).on("pageshow", "#personalized", function() {
+	showLoader();
+});
+
+$(document).on("pagebeforeshow", "#personalized", function() {
+	$.post("http://localhost/sites/five_minute/ajax_interface.php", {
+		getAction: "get-personalized-array",
+		personalizedBudget: localStorage.personalBudget,
+		personalizedOccasion: localStorage.personalOccasion,
+		personalizedFlowerType: localStorage.personalFlowerType
+	}, function(data) {
+		if (data != "none") {
+			localStorage.personalizedString = data;
+			var personalizedArray = $.parseJSON(localStorage.personalizedString);
+			localStorage.personalizedMaxArray = personalizedArray.length;
+			localStorage.personalizedCurrentIndex = 0;
+			$("#personalized-image-pic").attr("src", "C:/Users/arsoo_000/Documents/GitHub/FiveMinuteFlowersAPP/www/img/flowers/" + personalizedArray[0]["arrangement_code"].replace("FLO", "flo") + "_low.jpg");
+			$("#personalized-image-name").html(personalizedArray[0]["arrangement_name"]);
+			$("#personalized-image-price").html("$" + personalizedArray[0]["retail_price"]);
+			$("#personalized-image-desc").html(personalizedArray[0]["flower_description"]);
+		}
+		hideLoader();
+		renderPersonal();
+	});
+});
+
+//Go back and forth using array index values
+
+$("#personalized-forward").click(function() {
+	var newIndex = parseInt(localStorage.personalizedCurrentIndex) + 1;
+	if (newIndex > parseInt(localStorage.personalizedMaxArray) - 1) {
+		return false;
+	} else {
+		var personalizedArray = $.parseJSON(localStorage.personalizedString);
+		localStorage.personalizedCurrentIndex = newIndex;
+		$(".ajax-block").fadeIn();
+		$("#personalized-image-pic").attr("src", "C:/Users/arsoo_000/Documents/GitHub/FiveMinuteFlowersAPP/www/img/flowers/" + personalizedArray[newIndex]["arrangement_code"].replace("FLO", "flo") + "_low.jpg");
+		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
+		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
+		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
+		$(".ajax-block").fadeOut();
+	}
+});
+
+$("#personalized-back").click(function() {
+	var newIndex = parseInt(localStorage.personalizedCurrentIndex) - 1;
+	if (newIndex < 0) {
+		return false;
+	} else {
+		var personalizedArray = $.parseJSON(localStorage.personalizedString);
+		localStorage.personalizedCurrentIndex = newIndex;
+		$(".ajax-block").fadeIn();
+		$("#personalized-image-pic").attr("src", "C:/Users/arsoo_000/Documents/GitHub/FiveMinuteFlowersAPP/www/img/flowers/" + personalizedArray[newIndex]["arrangement_code"].replace("FLO", "flo") + "_low.jpg");
+		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
+		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
+		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
+		$(".ajax-block").fadeOut();
+	}
+});
