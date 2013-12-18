@@ -151,7 +151,7 @@ $("#personalized-back").click(function() {
 	}
 });
 
-//Get saved billing information
+//Get saved billing and delivery information
 
 $(document).ready(function() {
 	$.post(localStorage.path_to_interface, {
@@ -165,6 +165,18 @@ $(document).ready(function() {
 		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
 		});
 	});
+	
+	$.post(localStorage.path_to_interface, {
+		action: "read",
+		pageLayout: "delivery-selects",
+		uuid: 1 //CHANGE THIS!!!!!!!!
+	}, function(data) {
+		localStorage.savedDelivery = data;
+		var savedDeliveryInfo = $.parseJSON(localStorage.savedDelivery);
+		$(savedDeliveryInfo).each(function(index, element) {
+		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_address_1"] + ", " + element["delivery_city"] + ", " + element["delivery_state"] + "</option>").trigger("change"); 
+		});
+	});
 });
 
 //Enter saved billing information into form from JSON array
@@ -175,14 +187,33 @@ $("#payment-saved-billing").on("change", function(event) {
 	} else {
 		var savedBillingInfo = $.parseJSON(localStorage.savedBilling);
 		var currentIndex = $(this).val();
-		$("#billing-first-name").val(savedBillingInfo[currentIndex]["first_name"]);
-		$("#billing-last-name").val(savedBillingInfo[currentIndex]["last_name"]);
+		$("#billing-first-name").val(savedBillingInfo[currentIndex]["billing_first_name"]);
+		$("#billing-last-name").val(savedBillingInfo[currentIndex]["billing_last_name"]);
 		$("#billing-address-1").val(savedBillingInfo[currentIndex]["billing_address_1"]);
 		$("#billing-address-2").val(savedBillingInfo[currentIndex]["billing_address_2"]);
 		$("#billing-city").val(savedBillingInfo[currentIndex]["billing_city"]);
 		$("#billing-zipcode").val(savedBillingInfo[currentIndex]["billing_zipcode"]);
 	}
 });
+
+//Enter saved delivery information into form from JSON array
+
+$("#payment-saved-delivery").on("change", function(event) {
+	if ($(this).val() == "") {
+		return false;
+	} else {
+		var savedDeliveryInfo = $.parseJSON(localStorage.savedDelivery);
+		var currentIndex = $(this).val();
+		$("#delivery-first-name").val(savedDeliveryInfo[currentIndex]["delivery_first_name"]);
+		$("#delivery-last-name").val(savedDeliveryInfo[currentIndex]["delivery_last_name"]);
+		$("#delivery-address-1").val(savedDeliveryInfo[currentIndex]["delivery_address_1"]);
+		$("#delivery-address-2").val(savedDeliveryInfo[currentIndex]["delivery_address_2"]);
+		$("#delivery-city").val(savedDeliveryInfo[currentIndex]["delivery_city"]);
+		$("#delivery-zipcode").val(savedDeliveryInfo[currentIndex]["delivery_zipcode"]);
+	}
+});
+
+//Submit billing information
 
 function submitBilling() {
 	alert("yo");

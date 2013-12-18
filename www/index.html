@@ -532,7 +532,7 @@
                 </div>
             </div>
             <div class="medium-button">
-            	<a data-role="button" data-theme="b" onClick="submitBilling();">Next Step</a>
+            	<a href="#delivery" data-role="button" data-theme="b" data-transition="slide">Next Step</a>
             </div>
         </div>
     </div>
@@ -552,7 +552,7 @@
 <!--Delivery Page-->
 <div data-role="page" id="delivery">
 	<div data-role="header" data-theme="fmf">
-        <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <a data-role="button" href="#payment" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b" data-transition="slide">Back</a>
         <div class="clock-logo">
         	<img src="img/clock.png" />
         </div>
@@ -564,7 +564,7 @@
         <div class="margin-top-20">
         	<select id="payment-saved-delivery" name="select-choice-1" data-native-menu="false">
                 <option value="" data-placeholder="true">Choose Saved Delivery Address</option>
-                <option value="">219 E Crystal Cove Terrace, San Francisco, CA 94134</option>
+                <!--AUTOLOADER HERE-->
             </select>
         </div>
         <div id="billing-address" class="margin-top-20">
@@ -574,7 +574,7 @@
                     	<strong>First Name</strong>
                     </div>
                     <div>
-                    	<input type="text" />
+                    	<input id="delivery-first-name" type="text" />
                     </div>
                 </div>
                 <div class="ui-block-b padding-left-5">
@@ -582,7 +582,7 @@
                     	<strong>Last Name</strong>
                     </div>
                     <div>
-                    	<input type="text" />
+                    	<input id="delivery-last-name" type="text" />
                     </div>
                 </div>
             </div>
@@ -592,7 +592,7 @@
                     	<strong>Delivery Address 1</strong>
                     </div>
                     <div>
-                    	<input type="text" />
+                    	<input id="delivery-address-1" type="text" />
                     </div>
                 </div>
                 <div class="ui-block-b padding-left-5">
@@ -600,7 +600,7 @@
                     	<strong>Delivery Address 2</strong>
                     </div>
                     <div>
-                    	<input type="text" />
+                    	<input id="delivery-address-2" type="text" />
                     </div>
                 </div>
             </div>
@@ -610,7 +610,7 @@
                     	<strong>Delivery City</strong>
                     </div>
                     <div>
-                    	<input type="text" />
+                    	<input id="delivery-city" type="text" />
                     </div>
                 </div>
                 <div class="ui-block-b padding-left-5">
@@ -618,7 +618,7 @@
                     	<strong>Delivery State</strong>
                     </div>
                     <div>
-                    	<select name="select-choice-1" data-native-menu="false">
+                    	<select id="delivery-state" name="select-choice-1" data-native-menu="false">
                             <option value="choose-one" data-placeholder="true">Choose State</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -680,7 +680,7 @@
                     	<strong>Delivery Zipcode</strong>
                     </div>
                     <div>
-                    	<input type="text" />
+                    	<input id="delivery-zipcode" type="text" />
                     </div>
                 </div>
                 <div class="ui-block-b padding-left-5">
