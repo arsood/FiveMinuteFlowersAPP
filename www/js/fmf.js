@@ -6,6 +6,10 @@ function onDeviceReady() { //Function to work when device is up
 	});
 }
 
+//Alter position of clock logo
+
+$(".clock-logo").css("left", ($(window).width()) / 2 - 25);
+
 //Create cool looking card after new entry
 
 $("#save-recipient").click(function() {

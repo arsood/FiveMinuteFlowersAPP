@@ -58,6 +58,15 @@
 	margin-right:auto;
 }
 
+.clock-logo {
+	position:absolute;
+	top:5px;
+}
+
+.clock-logo img {
+	width:50px;
+}
+
 /*HOME*/
 
 .home-flower-block {

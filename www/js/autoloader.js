@@ -4,7 +4,7 @@ This document loads all pages and handles all of the buttloads of AJAX calls :P
 
 localStorage.path_to_layouts = "http://localhost/sites/five_minute/page_layouts.php";
 localStorage.path_to_interface = "http://localhost/sites/five_minute/ajax_interface.php";
-localStorage.path_to_images = "C:/Users/arsoo_000/Documents/GitHub/FiveMinuteFlowersAPP/www/img/flowers/";
+localStorage.path_to_images = "http://www.fiveminuteflowers.com/flowers/";
 
 //General loading functions
 
@@ -66,12 +66,10 @@ $(document).on("pageshow", "#single", function() {
 $(document).on("pagebeforeshow", "#single", function() {
 	$.get(localStorage.path_to_interface + "?action=get-flower-info&arrangement=" + localStorage.specificFlower, function(data) {
 		var flowerData = $.parseJSON(data);
-		var flowerImageCode = flowerData["arrangement_code"];
-		var flowerImage = flowerImageCode.replace("FLO", "flo");
 		$("#single-flower-name").html(flowerData["arrangement_name"]);
 		$("#single-flower-price").html("$" + flowerData["retail_price"]);
 		$("#single-flower-desc").html(flowerData["flower_description"]);
-		$("#single-flower-image").attr("src", localStorage.path_to_images  + flowerImage + "_low.jpg");
+		$("#single-flower-image").attr("src", localStorage.path_to_images  + flowerData["arrangement_code"] + "_low.jpg");
 		$("#single-page-content").fadeIn();
 		hideLoader();
 	});
@@ -105,7 +103,7 @@ $(document).on("pagebeforeshow", "#personalized", function() {
 			var personalizedArray = $.parseJSON(localStorage.personalizedString);
 			localStorage.personalizedMaxArray = personalizedArray.length;
 			localStorage.personalizedCurrentIndex = 0;
-			$("#personalized-image-pic").attr("src", localStorage.path_to_images + personalizedArray[0]["arrangement_code"].replace("FLO", "flo") + "_low.jpg");
+			$("#personalized-image-pic").attr("src", localStorage.path_to_images + personalizedArray[0]["arrangement_code"] + "_low.jpg");
 			$("#personalized-image-name").html(personalizedArray[0]["arrangement_name"]);
 			$("#personalized-image-price").html("$" + personalizedArray[0]["retail_price"]);
 			$("#personalized-image-desc").html(personalizedArray[0]["flower_description"]);
@@ -129,7 +127,7 @@ $("#personalized-forward").click(function() {
 		var personalizedArray = $.parseJSON(localStorage.personalizedString);
 		localStorage.personalizedCurrentIndex = newIndex;
 		$(".ajax-block").fadeIn();
-		$("#personalized-image-pic").attr("src", localStorage.path_to_images + personalizedArray[newIndex]["arrangement_code"].replace("FLO", "flo") + "_low.jpg");
+		$("#personalized-image-pic").attr("src", localStorage.path_to_images + personalizedArray[newIndex]["arrangement_code"] + "_low.jpg");
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
@@ -145,10 +143,47 @@ $("#personalized-back").click(function() {
 		var personalizedArray = $.parseJSON(localStorage.personalizedString);
 		localStorage.personalizedCurrentIndex = newIndex;
 		$(".ajax-block").fadeIn();
-		$("#personalized-image-pic").attr("src", localStorage.path_to_images + personalizedArray[newIndex]["arrangement_code"].replace("FLO", "flo") + "_low.jpg");
+		$("#personalized-image-pic").attr("src", localStorage.path_to_images + personalizedArray[newIndex]["arrangement_code"] + "_low.jpg");
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
 		$(".ajax-block").fadeOut();
 	}
 });
+
+//Get saved billing information
+
+$(document).ready(function() {
+	$.post(localStorage.path_to_interface, {
+		action: "read",
+		pageLayout: "billing-selects",
+		uuid: 1 //CHANGE THIS!!!!!!!!
+	}, function(data) {
+		localStorage.savedBilling = data;
+		var savedBillingInfo = $.parseJSON(localStorage.savedBilling);
+		$(savedBillingInfo).each(function(index, element) {
+		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
+		});
+	});
+});
+
+//Enter saved billing information into form from JSON array
+
+$("#payment-saved-billing").on("change", function(event) {
+	if ($(this).val() == "") {
+		return false;
+	} else {
+		var savedBillingInfo = $.parseJSON(localStorage.savedBilling);
+		var currentIndex = $(this).val();
+		$("#billing-first-name").val(savedBillingInfo[currentIndex]["first_name"]);
+		$("#billing-last-name").val(savedBillingInfo[currentIndex]["last_name"]);
+		$("#billing-address-1").val(savedBillingInfo[currentIndex]["billing_address_1"]);
+		$("#billing-address-2").val(savedBillingInfo[currentIndex]["billing_address_2"]);
+		$("#billing-city").val(savedBillingInfo[currentIndex]["billing_city"]);
+		$("#billing-zipcode").val(savedBillingInfo[currentIndex]["billing_zipcode"]);
+	}
+});
+
+function submitBilling() {
+	alert("yo");
+}

@@ -32,9 +32,9 @@
 	<div data-role="header" data-theme="fmf">
     	<a data-role="button" href="#" data-icon="refresh" data-iconpos="left" class="ui-btn-right" data-theme="b">Next</a>
         <a data-role="button" href="#" data-icon="refresh" data-iconpos="left" class="ui-btn-left" data-theme="b">Next</a>
-        <h3>
-        	FiveMinuteFlowers
-        </h3>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
     </div>
     <div data-role="content">
     	
@@ -89,9 +89,9 @@
 <div data-role="page" id="wizard">
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#index" data-icon="home" data-iconpos="left" class="ui-btn-left" data-theme="b">Home</a>
-        <h3>
-        	FiveMinuteFlowers
-        </h3>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
     </div>
     <div data-role="content">
     	<div class="cool-wacky-title txt-center">
@@ -240,9 +240,9 @@
 <div data-role="page" id="personalized">
 	<div data-role="header" data-theme="fmf">
     	<a data-role="button" href="#index" data-icon="home" data-iconpos="left" class="ui-btn-left" data-theme="b">Home</a>
-        <h3>
-        	FiveMinuteFlowers
-        </h3>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
     </div>
     <div id="personalized-page-content" data-role="content">
     	<div class="personalized-listings">
@@ -312,9 +312,9 @@
 <div data-role="page" id="browse">
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="index.html" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
-        <h3>
-        	FiveMinuteFlowers
-        </h3>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
     </div>
     <div data-role="content">
     	<div class="purple-banner">
@@ -344,9 +344,9 @@
 <div data-role="page" id="single">
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
-        <h3>
-        	FiveMinuteFlowers
-        </h3>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
     </div>
     <div id="single-page-content" data-role="content">
     	<div class="single-image margin-top-10">
@@ -384,17 +384,186 @@
 <div data-role="page" id="payment">
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
-        <h3>
-        	FiveMinuteFlowers
-        </h3>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
     </div>
     <div data-role="content">
     	<div class="margin-top-10 txt-center">
         	<strong>Enter Payment Information</strong>
         </div>
         <div class="margin-top-20">
-        	<select name="select-choice-1" data-native-menu="false">
-                <option value="choose-one" data-placeholder="true">Choose Saved Billing Address</option>
+        	<select id="payment-saved-billing" name="select-choice-1" data-native-menu="false">
+                <option value="" data-placeholder="true">Choose Saved Billing Address</option>
+                <!--AUTOLOADER HERE-->
+            </select>
+        </div>
+        <div id="billing-address" class="margin-top-20">
+        	<div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>First Name</strong>
+                    </div>
+                    <div>
+                    	<input id="billing-first-name" type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Last Name</strong>
+                    </div>
+                    <div>
+                    	<input id="billing-last-name" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a margin-top-10">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing Address 1</strong>
+                    </div>
+                    <div>
+                    	<input id="billing-address-1" type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Billing Address 2</strong>
+                    </div>
+                    <div>
+                    	<input id="billing-address-2" type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing City</strong>
+                    </div>
+                    <div>
+                    	<input id="billing-city" type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Billing State</strong>
+                    </div>
+                    <div>
+                    	<select id="billing-state" name="select-choice-1" data-native-menu="false">
+                            <option value="choose-one" data-placeholder="true">Choose State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing Zipcode</strong>
+                    </div>
+                    <div>
+                    	<input id="billing-zipcode" type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Country</strong>
+                    </div>
+                    <div>
+                    	<input type="text" value="USA" disabled />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                    	<input type="checkbox" name="save-billing-address" id="save-billing-address-button" class="custom" />
+                    	<label for="save-billing-address-button">Want to save this address for next time?</label>
+                	</fieldset>
+                </div>
+            </div>
+            <div class="medium-button">
+            	<a data-role="button" data-theme="b" onClick="submitBilling();">Next Step</a>
+            </div>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Payment Page-->
+
+<!--Delivery Page-->
+<div data-role="page" id="delivery">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
+    </div>
+    <div data-role="content">
+    	<div class="margin-top-10 txt-center">
+        	<strong>Enter Delivery Information</strong>
+        </div>
+        <div class="margin-top-20">
+        	<select id="payment-saved-delivery" name="select-choice-1" data-native-menu="false">
+                <option value="" data-placeholder="true">Choose Saved Delivery Address</option>
                 <option value="">219 E Crystal Cove Terrace, San Francisco, CA 94134</option>
             </select>
         </div>
@@ -420,7 +589,7 @@
             <div class="ui-grid-a margin-top-10">
             	<div class="ui-block-a padding-right-5">
                 	<div>
-                    	<strong>Billing Address 1</strong>
+                    	<strong>Delivery Address 1</strong>
                     </div>
                     <div>
                     	<input type="text" />
@@ -428,7 +597,7 @@
                 </div>
                 <div class="ui-block-b padding-left-5">
                 	<div>
-                    	<strong>Billing Address 2</strong>
+                    	<strong>Delivery Address 2</strong>
                     </div>
                     <div>
                     	<input type="text" />
@@ -438,7 +607,7 @@
             <div class="ui-grid-a">
             	<div class="ui-block-a padding-right-5">
                 	<div>
-                    	<strong>Billing City</strong>
+                    	<strong>Delivery City</strong>
                     </div>
                     <div>
                     	<input type="text" />
@@ -446,12 +615,61 @@
                 </div>
                 <div class="ui-block-b padding-left-5">
                 	<div>
-                    	<strong>Billing State</strong>
+                    	<strong>Delivery State</strong>
                     </div>
                     <div>
                     	<select name="select-choice-1" data-native-menu="false">
                             <option value="choose-one" data-placeholder="true">Choose State</option>
-                            <option value="california">California</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
                         </select>
                     </div>
                 </div>
@@ -459,7 +677,7 @@
             <div class="ui-grid-a">
             	<div class="ui-block-a padding-right-5">
                 	<div>
-                    	<strong>Billing Zipcode</strong>
+                    	<strong>Delivery Zipcode</strong>
                     </div>
                     <div>
                     	<input type="text" />
@@ -498,7 +716,7 @@
         </div>
     </div>
 </div>
-<!--/Payment Page-->
+<!--/Delivery Page-->
 
 <script type="text/javascript" src="phonegap.js"></script>
 <script type="text/javascript" src="libs/jquery/jquery-2.0.3.min.js"></script>
