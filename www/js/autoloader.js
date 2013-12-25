@@ -4,7 +4,7 @@ This document loads all pages and handles all of the buttloads of AJAX calls :P
 
 localStorage.path_to_layouts = "http://localhost/sites/five_minute/page_layouts.php";
 localStorage.path_to_interface = "http://localhost/sites/five_minute/ajax_interface.php";
-localStorage.path_to_images = "http://www.fiveminuteflowers.com/flowers/";
+localStorage.path_to_images = "img/flowers/";
 
 //General loading functions
 
@@ -174,7 +174,7 @@ $(document).ready(function() {
 		localStorage.savedDelivery = data;
 		var savedDeliveryInfo = $.parseJSON(localStorage.savedDelivery);
 		$(savedDeliveryInfo).each(function(index, element) {
-		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_address_1"] + ", " + element["delivery_city"] + ", " + element["delivery_state"] + "</option>").trigger("change"); 
+		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change"); 
 		});
 	});
 });

@@ -701,7 +701,7 @@
                 </div>
             </div>
             <div class="medium-button">
-            	<a href="#" data-role="button" data-theme="b">Next Step</a>
+            	<a href="#message" data-role="button" data-theme="b">Next Step</a>
             </div>
         </div>
     </div>
@@ -717,6 +717,38 @@
     </div>
 </div>
 <!--/Delivery Page-->
+
+<!--Message Page-->
+<div data-role="page" id="message">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="#delivery" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b" data-transition="slide">Back</a>
+        <div class="clock-logo">
+        	<img src="img/clock.png" />
+        </div>
+    </div>
+    <div data-role="content">
+    	<div class="margin-top-10 txt-center">
+        	<strong>Attach a Personal Message</strong>
+        </div>
+        <div class="margin-top-30 message-textarea">
+        	<textarea></textarea>
+        </div>
+        <div class="margin-top-20 medium-button">
+        	<a href="#" data-role="button" data-theme="b">Last Step</a>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Message Page-->
 
 <script type="text/javascript" src="phonegap.js"></script>
 <script type="text/javascript" src="libs/jquery/jquery-2.0.3.min.js"></script>
