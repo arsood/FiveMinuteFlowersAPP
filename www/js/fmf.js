@@ -113,3 +113,21 @@ $("#for-occasion").click(function() {
 		scrollTop: $("#occasion-list").offset().top
 	}, 800);
 });
+
+//Validate billing information
+
+function submitBilling() {
+	if (
+		$("#billing-first-name").val() == "" ||
+		$("#billing-last-name").val() == "" ||
+		$("#billing-address-1").val() == "" ||
+		$("#billing-city").val() == "" ||
+		$("#billing-state").val() == "" ||
+		$("#billing-zipcode").val() == ""
+	) {
+		window.location = "html/dialogs/empty-error.html";
+		return false;
+	} else {
+		$.mobile.changePage("#delivery", { transition: "fade" });
+	};
+}

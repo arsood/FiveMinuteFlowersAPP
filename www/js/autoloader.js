@@ -212,9 +212,3 @@ $("#payment-saved-delivery").on("change", function(event) {
 		$("#delivery-zipcode").val(savedDeliveryInfo[currentIndex]["delivery_zipcode"]);
 	}
 });
-
-//Submit billing information
-
-function submitBilling() {
-	alert("yo");
-}
