@@ -30,10 +30,8 @@
 <div data-role="page" id="index">
 
 	<div data-role="header" data-theme="fmf">
-    	<a data-role="button" href="#" data-icon="refresh" data-iconpos="left" class="ui-btn-right" data-theme="b">Next</a>
-        <a data-role="button" href="#" data-icon="refresh" data-iconpos="left" class="ui-btn-left" data-theme="b">Next</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div data-role="content">
@@ -90,7 +88,7 @@
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#index" data-icon="home" data-iconpos="left" class="ui-btn-left" data-theme="b">Home</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div data-role="content">
@@ -128,11 +126,7 @@
         
         <!--Recipient Recommendations-->
         <div id="recipient-select" class="margin-top-50">
-            <ul class="recipient-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search For Names">
-            	<li><a href="#">Amanda Bynes</a></li>
-                <li><a href="#">Reid Hoffman</a></li>
-                <li><a href="#">Mark Z</a></li>
-            </ul>
+            <!--AUTOLOADER HERE-->
         </div>
         <!--/Recipient Recommendations-->
         
@@ -241,7 +235,7 @@
 	<div data-role="header" data-theme="fmf">
     	<a data-role="button" href="#index" data-icon="home" data-iconpos="left" class="ui-btn-left" data-theme="b">Home</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div id="personalized-page-content" data-role="content">
@@ -313,7 +307,7 @@
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="index.html" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div data-role="content">
@@ -345,7 +339,7 @@
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div id="single-page-content" data-role="content">
@@ -385,7 +379,7 @@
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div data-role="content">
@@ -554,7 +548,7 @@
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#payment" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b" data-transition="slide">Back</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div data-role="content">
@@ -619,7 +613,7 @@
                     </div>
                     <div>
                     	<select id="delivery-state" name="select-choice-1" data-native-menu="false">
-                            <option value="choose-one" data-placeholder="true">Choose State</option>
+                            <option value="" data-placeholder="true">Choose State</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
                             <option value="AZ">Arizona</option>
@@ -701,7 +695,7 @@
                 </div>
             </div>
             <div class="medium-button">
-            	<a href="#message" data-role="button" data-theme="b">Next Step</a>
+            	<a onClick="submitDelivery();" data-role="button" data-theme="b">Next Step</a>
             </div>
         </div>
     </div>
@@ -723,7 +717,7 @@
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#delivery" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b" data-transition="slide">Back</a>
         <div class="clock-logo">
-        	<img src="img/clock.png" />
+        	<img src="img/logo-small.png" />
         </div>
     </div>
     <div data-role="content">

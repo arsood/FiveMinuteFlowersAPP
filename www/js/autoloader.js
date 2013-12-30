@@ -159,11 +159,14 @@ $(document).ready(function() {
 		pageLayout: "billing-selects",
 		uuid: 1 //CHANGE THIS!!!!!!!!
 	}, function(data) {
-		localStorage.savedBilling = data;
-		var savedBillingInfo = $.parseJSON(localStorage.savedBilling);
-		$(savedBillingInfo).each(function(index, element) {
-		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
-		});
+		if (data == "none") {
+			return false;
+		} else {
+			var savedBillingInfo = $.parseJSON(data);
+			$(savedBillingInfo).each(function(index, element) {
+			   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
+			});
+		}
 	});
 	
 	$.post(localStorage.path_to_interface, {
@@ -171,11 +174,14 @@ $(document).ready(function() {
 		pageLayout: "delivery-selects",
 		uuid: 1 //CHANGE THIS!!!!!!!!
 	}, function(data) {
-		localStorage.savedDelivery = data;
-		var savedDeliveryInfo = $.parseJSON(localStorage.savedDelivery);
-		$(savedDeliveryInfo).each(function(index, element) {
-		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change"); 
-		});
+		if (data == "none") {
+			return false;
+		} else {
+			var savedDeliveryInfo = $.parseJSON(data);
+			$(savedDeliveryInfo).each(function(index, element) {
+			   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change"); 
+			});
+		}
 	});
 });
 
@@ -211,4 +217,21 @@ $("#payment-saved-delivery").on("change", function(event) {
 		$("#delivery-city").val(savedDeliveryInfo[currentIndex]["delivery_city"]);
 		$("#delivery-zipcode").val(savedDeliveryInfo[currentIndex]["delivery_zipcode"]);
 	}
+});
+
+//Load in saved people
+
+$(document).on("pageshow", "#wizard", function() {
+	showLoader();
+});
+
+$(document).on("pagebeforeshow", "#wizard", function() {
+	$.post(localStorage.path_to_layouts + "?action=read&page-layout=recipient-list", {
+		method: "read",
+		action: "get-recipients",
+		uuid: 1 //CHANGE THIS!!!
+	}, function(data) {
+		$("#recipient-select").html(data).trigger("create");
+		hideLoader();
+	});
 });

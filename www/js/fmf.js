@@ -8,7 +8,7 @@ function onDeviceReady() { //Function to work when device is up
 
 //Alter position of clock logo
 
-$(".clock-logo").css("left", ($(window).width()) / 2 - 25);
+$(".clock-logo").css("left", ($(window).width() / 2) - 75);
 
 //Create cool looking card after new entry
 
@@ -46,8 +46,7 @@ $("#save-recipient").click(function() {
 
 //Create cool card after list click
 
-$(".recipient-list li").click(function() {
-	var recName = $(this).children().children().children().html();
+function setRec(recName) {
 	$("#recipient-card-name").html(recName);
 	$("#recipient-select").fadeOut(function() {
 		$("#recipient-enter").fadeOut(function() {
@@ -56,7 +55,7 @@ $(".recipient-list li").click(function() {
 			});
 		});
 	});
-});
+}
 
 //Start over button
 
@@ -128,6 +127,28 @@ function submitBilling() {
 		window.location = "html/dialogs/empty-error.html";
 		return false;
 	} else {
+		//AJAX here and next part on callback
+		
 		$.mobile.changePage("#delivery", { transition: "fade" });
+	};
+}
+
+//Validate delivery information
+
+function submitDelivery() {
+	if (
+		$("#delivery-first-name").val() == "" ||
+		$("#delivery-last-name").val() == "" ||
+		$("#delivery-address-1").val() == "" ||
+		$("#delivery-city").val() == "" ||
+		$("#delivery-state").val() == "" ||
+		$("#delivery-zipcode").val() == ""
+	) {
+		window.location = "html/dialogs/empty-error.html";
+		return false;
+	} else {
+		//AJAX here and next part on callback
+		
+		$.mobile.changePage("#message", { transition: "fade" });
 	};
 }
