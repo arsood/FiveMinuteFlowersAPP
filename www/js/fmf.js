@@ -63,6 +63,12 @@ $("#start-over").click(function() {
 	location.reload();
 });
 
+//Show best sellers dialog
+
+$("#best-sellers-link").click(function() {
+	window.location = "html/dialogs/coming-soon.html";
+});
+
 //Add image borders for styled choices
 
 $(".wizard-flower-block img").click(function() {
@@ -124,7 +130,7 @@ function submitBilling() {
 		$("#billing-state").val() == "" ||
 		$("#billing-zipcode").val() == ""
 	) {
-		window.location = "html/dialogs/empty-error.html";
+		alert("Please enter all information");
 		return false;
 	} else {
 		//AJAX here and next part on callback
@@ -144,11 +150,25 @@ function submitDelivery() {
 		$("#delivery-state").val() == "" ||
 		$("#delivery-zipcode").val() == ""
 	) {
-		window.location = "html/dialogs/empty-error.html";
+		alert("Please enter all information");
 		return false;
 	} else {
 		//AJAX here and next part on callback
 		
 		$.mobile.changePage("#message", { transition: "fade" });
 	};
+}
+
+//Select arrangement handler
+
+function selectArrange(arrangement) {
+	localStorage.arrangementSelected = arrangement;
+	$.mobile.changePage("#billing", { transition: "fade" });
+}
+
+//Select personalized arrangement handler
+
+function selectPersonal(arrangement) {
+	localStorage.arrangementSelected = arrangement;
+	$.mobile.changePage("#billing", { transition: "fade" });
 }

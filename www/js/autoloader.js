@@ -20,6 +20,13 @@ function hideLoader() {
 	$.mobile.loading("hide");
 }
 
+//Stylistic functions
+
+function clearRatingColor() {
+	$("#rating-down").attr("style", "");
+	$("#rating-up").attr("style", "");
+}
+
 //Get index occasions
 
 $(document).on("pageshow", "#index", function() {
@@ -70,6 +77,7 @@ $(document).on("pagebeforeshow", "#single", function() {
 		$("#single-flower-price").html("$" + flowerData["retail_price"]);
 		$("#single-flower-desc").html(flowerData["flower_description"]);
 		$("#single-flower-image").attr("src", localStorage.path_to_images  + flowerData["arrangement_code"] + "_low.jpg");
+		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"] + "');");
 		$("#single-page-content").fadeIn();
 		hideLoader();
 	});
@@ -98,7 +106,11 @@ $(document).on("pagebeforeshow", "#personalized", function() {
 		personalizedOccasion: localStorage.personalOccasion,
 		personalizedFlowerType: localStorage.personalFlowerType
 	}, function(data) {
-		if (data != "none") {
+		var ajaxData = $.trim(data);
+		if (ajaxData == "none") {
+			alert("Nothing was found! Please try another search.");
+			$.mobile.changePage("#wizard", { transition: "fade" });
+		} else {
 			localStorage.personalizedString = data;
 			var personalizedArray = $.parseJSON(localStorage.personalizedString);
 			localStorage.personalizedMaxArray = personalizedArray.length;
@@ -107,6 +119,7 @@ $(document).on("pagebeforeshow", "#personalized", function() {
 			$("#personalized-image-name").html(personalizedArray[0]["arrangement_name"]);
 			$("#personalized-image-price").html("$" + personalizedArray[0]["retail_price"]);
 			$("#personalized-image-desc").html(personalizedArray[0]["flower_description"]);
+			$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[0]["arrangement_code"] + "');");
 			
 			//Show the personalization page
 			
@@ -120,6 +133,7 @@ $(document).on("pagebeforeshow", "#personalized", function() {
 //Go back and forth using array index values
 
 $("#personalized-forward").click(function() {
+	clearRatingColor();
 	var newIndex = parseInt(localStorage.personalizedCurrentIndex) + 1;
 	if (newIndex > parseInt(localStorage.personalizedMaxArray) - 1) {
 		return false;
@@ -131,11 +145,13 @@ $("#personalized-forward").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
+		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "');");
 		$(".ajax-block").fadeOut();
 	}
 });
 
 $("#personalized-back").click(function() {
+	clearRatingColor();
 	var newIndex = parseInt(localStorage.personalizedCurrentIndex) - 1;
 	if (newIndex < 0) {
 		return false;
@@ -147,6 +163,7 @@ $("#personalized-back").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
+		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "');");
 		$(".ajax-block").fadeOut();
 	}
 });
