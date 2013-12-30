@@ -374,7 +374,7 @@
 </div>
 <!--/Single Flower Page-->
 
-<!--Payment Page-->
+<!--Billing Page-->
 <div data-role="page" id="billing">
 	<div data-role="header" data-theme="fmf">
         <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
@@ -541,7 +541,7 @@
         </div>
     </div>
 </div>
-<!--/Payment Page-->
+<!--/Billing Page-->
 
 <!--Delivery Page-->
 <div data-role="page" id="delivery">
@@ -743,6 +743,95 @@
     </div>
 </div>
 <!--/Message Page-->
+
+<!--Payment Page-->
+<div data-role="page" id="payment">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="#message" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b" data-transition="slide">Back</a>
+        <div class="clock-logo">
+        	<img src="img/logo-small.png" />
+        </div>
+    </div>
+    <div data-role="content">
+    	<div class="margin-top-10 txt-center">
+        	<strong>Enter Credit Card Information</strong>
+        </div>
+        <div class="margin-top-10 txt-center">
+        	<img src="img/cc.png" />
+        </div>
+        <div class="margin-top-10 txt-center">
+        	<img src="img/secured.png" width="80px" />
+        </div>
+        <div class="margin-top-20">
+        	<strong>Card Number</strong>
+        </div>
+        <div class="margin-top-10">
+        	<input type="tel" />
+        </div>
+        <div class="ui-grid-a margin-top-20">
+            <div class="ui-block-a padding-right-5">
+                <div>
+                    <strong>Expiration Month</strong>
+                </div>
+                <div>
+                    <select data-native-menu="false">
+                    	<option value="" data-placeholder="true">Choose Month</option>
+                    	<option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui-block-b padding-left-5">
+                <div>
+                    <strong>Expiration Year</strong>
+                </div>
+                <div>
+                    <select data-native-menu="false">
+                    	<option value="" data-placeholder="true">Choose Year</option>
+                    	<option>2013</option>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="margin-top-10">
+        	<strong>Card Security Code</strong>
+        </div>
+        <div class="margin-top-10">
+        	<input type="tel" />
+        </div>
+        <div class="margin-top-10 medium-button">
+        	<a href="#" data-role="button" data-theme="b">Finish</a>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Payment Page-->
 
 <script type="text/javascript" src="phonegap.js"></script>
 <script type="text/javascript" src="libs/jquery/jquery-2.0.3.min.js"></script>
