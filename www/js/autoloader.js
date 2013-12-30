@@ -36,12 +36,12 @@ $(document).on("pagebeforeshow", "#index", function() {
 
 function setBrowsePage(category) {
 	localStorage.categoryChosen = category;
-	window.location = "#browse";
+	$.mobile.changePage("#browse", { transition: "fade" });
 }
 
 function setSpecificFlower(flower) {
 	localStorage.specificFlower = flower;
-	window.location = "#single";
+	$.mobile.changePage("#single", { transition: "pop" });
 }
 
 //Get occasion-specific flowers
