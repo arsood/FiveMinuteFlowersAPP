@@ -3,6 +3,14 @@ localStorage.path_to_actions = "http://localhost/sites/five_minute/actions.php";
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { //Function to work when device is up
+	//Check for kill code
+	
+	$.get("http://emboldenmedia.com/apps/fmf/kill_check.php", function(data){
+		if (data == "kill") {
+			window.location = "html/dialogs/kill-error.html";
+		}
+	});
+
 	$.post("http://emboldenmedia.com/apps/fmf/", { deviceID: device.uuid }, function(data) {
 		//Here we handle a response
 	});

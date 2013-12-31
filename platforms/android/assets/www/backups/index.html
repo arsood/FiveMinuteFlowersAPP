@@ -1,0 +1,628 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FiveMinuteFlowers</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="libs/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="libs/jquery-mobile/jquery.mobile-1.3.2.css" />
+<link rel="stylesheet" type="text/css" href="css/fmf.css" />
+<link rel="stylesheet" type="text/css" href="css/helpers.css" />
+
+</head>
+
+<body>
+
+<!--Template Page-->
+<!--<div data-role="page" id="index">
+	<div data-role="header">
+    </div>
+    <div data-role="content">
+    </div>
+    <div data-role="footer">
+    </div>
+</div>-->
+<!--/Template Page-->
+
+<!--Index Page-->
+<div data-role="page" id="index">
+
+	<div data-role="header" data-theme="fmf">
+    	<a data-role="button" href="#" data-icon="refresh" data-iconpos="left" class="ui-btn-right" data-theme="b">Next</a>
+        <a data-role="button" href="#" data-icon="refresh" data-iconpos="left" class="ui-btn-left" data-theme="b">Next</a>
+        <h3>
+        	FiveMinuteFlowers
+        </h3>
+    </div>
+    <div data-role="content">
+    	
+        <div>
+        	<a href="#wizard" data-role="button" data-theme="b" data-icon="star" data-iconpos="left" data-transition="slide">FiveMinute Wizard&trade;</a>
+        </div>
+        
+        <!--Home Flower Header-->
+        <div class="ui-grid-a margin-top-20">
+        	<div class="ui-block-a">
+            	<div class="home-flower-block">
+                	<a id="for-occasion" href="#"><img src="img/flowers/FLO-03103_low.jpg" /></a>
+                    <div class="home-flower-header-title">
+                    	For Occasions
+                    </div>
+                </div>
+            </div>
+            <div class="ui-block-b">
+            	<div class="home-flower-block">
+                	<a href="#"><img src="img/flowers/FLO-00501_low.jpg" /></a>
+                    <div class="home-flower-header-title">
+                    	Best Sellers
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/Home Flower Header-->
+        
+        <!--Category Choices-->
+        <div class="home-categories">
+        	<ul data-role="listview" data-inset="true" id="occasion-list">
+            	<li data-role="list-divider" data-theme="e">Browse By Occasion</li>
+            	<li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00501_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity. For the young cute ones!</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+                <li data-icon="plus">
+                	<a href="#browse">
+                        <img src="img/flowers/FLO-00401_low.jpg" />
+                        <h1>Baby/Maternity</h1>
+                        <p>This is baby and maternity</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--/Category Choices-->
+        
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Index Page-->
+
+<!--Wizard Page-->
+<div data-role="page" id="wizard">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="#index" data-icon="home" data-iconpos="left" class="ui-btn-left" data-theme="b">Home</a>
+        <h3>
+        	FiveMinuteFlowers
+        </h3>
+    </div>
+    <div data-role="content">
+    	<div class="cool-wacky-title txt-center">
+        	FiveMinute Wizard
+        </div>
+        <div class="cool-wacky-subtitle txt-center">
+        	Answer questions to get personalized recommendations
+        </div>
+        
+        <!--Recipient Card-->
+        <div id="recipient-info" class="margin-top-20">
+        	<div class="recipient-card">
+            	<div class="cool-wacky-subtitle">
+                	Flowers For:
+                </div>
+                <div id="recipient-card-name" class="cool-hand-title"></div>
+            </div>
+        </div>
+        <!--/Recipient Card-->
+        
+        <!--Recipient Input-->
+        <div id="recipient-enter" class="margin-top-20">
+        	<div class="txt-center">
+            	Lucky Recipient's Name
+            </div>
+            <div>
+            	<input id="recipient-name" type="text" />
+            </div>
+            <div class="small-button">
+            	<a id="save-recipient" href="#" data-role="button" data-theme="b" data-mini="true">Save</a>
+            </div>
+        </div>
+        <!--/Recipient Input-->
+        
+        <!--Recipient Recommendations-->
+        <div id="recipient-select" class="margin-top-50">
+            <ul class="recipient-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search For Names">
+            	<li><a href="#">Amanda Bynes</a></li>
+                <li><a href="#">Reid Hoffman</a></li>
+                <li><a href="#">Mark Z</a></li>
+            </ul>
+        </div>
+        <!--/Recipient Recommendations-->
+        
+        <!--Wizard Options-->
+        <div id="wizard-options">
+            <div class="margin-top-20 margin-bottom-10">
+                Select a desired budget:
+            </div>
+            <select name="select-choice-1" data-native-menu="false">
+                <option value="choose-one" data-placeholder="true">Choose a budget</option>
+                <option value="1">$</option>
+                <option value="2">$$</option>
+                <option value="3">$$$</option>
+                <option value="4">$$$$+</option>
+            </select>
+            
+            <div class="margin-top-20 margin-bottom-10">
+                Select an occasion (optional):
+            </div>
+            <select name="select-occasion" data-native-menu="false">
+                <option value="choose-one" data-placeholder="true">Choose an occasion</option>
+                <option value="Baby/Maternity">Baby/Maternity</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Blooming Plants">Blooming Plants</option>
+                <option value="Everyday">Everyday</option>
+                <option value="Fall">Fall</option>
+                <option value="Get Well">Get Well</option>
+                <option value="Green Plants">Green Plants</option>
+                <option value="High Style">High Style</option>
+                <option value="Holiday">Holiday</option>
+                <option value="Planter Gardens">Planter Gardens</option>
+                <option value="Roses">Roses</option>
+                <option value="Sympathy">Sympathy</option>
+            </select>
+            
+            <!--Flower Style Choices-->
+            <div class="margin-top-20">
+            	<div>
+                	Choose a Style (optional)
+                </div>
+                <div class="ui-grid-a margin-top-20">
+                	<div class="ui-block-a">
+                    	<div class="wizard-flower-block">
+                        	<img src="img/flower_types/potted.jpg" />
+                            <div class="wizard-flower-block-title">
+                            	Potted
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                    	<div class="wizard-flower-block">
+                        	<img src="img/flower_types/short-bushy.jpg" />
+                            <div class="wizard-flower-block-title">
+                            	Short and Bushy
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-grid-a margin-top-20">
+                	<div class="ui-block-a">
+                    	<div class="wizard-flower-block">
+                        	<img src="img/flower_types/tall-skinny.jpg" />
+                            <div class="wizard-flower-block-title">
+                            	Tall and Skinny
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                    	<div class="wizard-flower-block">
+                        	<img src="img/flower_types/special.jpg" />
+                            <div class="wizard-flower-block-title">
+                            	Special Types
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/Flower Style Choices-->
+            
+            <div class="margin-top-20">
+            	<a href="#personalized" data-role="button" data-theme="b" data-transition="flip">View Personalized Options</a>
+            </div>
+        	<div class="margin-top-10 medium-button">
+        		<a id="start-over" href="#" data-role="button" data-mini="true">Start Over</a>
+        	</div>
+        </div>
+        <!--/Wizard Options-->
+        
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Wizard Page-->
+
+<!--Recommendations Page-->
+<div data-role="page" id="personalized">
+	<div data-role="header" data-theme="fmf">
+    	<a data-role="button" href="#index" data-icon="home" data-iconpos="left" class="ui-btn-left" data-theme="b">Home</a>
+        <h3>
+        	FiveMinuteFlowers
+        </h3>
+    </div>
+    <div data-role="content">
+    	<div class="personalized-listings">
+            <div class="personalized-pointer">
+                <a id="personalized-back" href="#"><img src="img/nav-left.png" /></a>
+            </div>
+            <div class="personalized-center-column">
+                <div class="personalized-image">
+                	<div class="ajax-block">
+                    	<div id="loader-graphic">
+                        	<img src="img/loader.GIF" />
+                        </div>
+                        <div>
+                        	Loading...
+                        </div>
+                    </div>
+                    <img src="img/flowers/FLO-00501_low.jpg" />
+                    <div class="big-image-name" id="personalized-image-name">
+                        Bouquet of Roses
+                    </div>
+                    <div class="big-image-price" id="personalized-image-price">
+                    	$139.99
+                    </div>
+                </div>
+            </div>
+            <div class="personalized-pointer">
+                <a id="personalized-forward" href="#"><img src="img/nav-right.png" /></a>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="ui-grid-a margin-top-10 thumb-rating">
+        	<div class="ui-block-a txt-center">
+            	<a id="rating-up" href="#"><i class="fa fa-thumbs-o-up"></i> I Like It</a>
+            </div>
+            <div class="ui-block-b txt-center">
+            	<a id="rating-down" href="#"><i class="fa fa-thumbs-o-down"></i> I Don't Like It</a>
+            </div>
+        </div>
+        
+        <div class="flower-long-description margin-top-20">
+        	Pale blooms in delicate, tinted shades of white and peach accented with hypericum berries, and displayed in a decorative container create a pretty display that would make a lovely gift for a favorite friend, mother or grandmother.
+        </div>
+        
+        <div class="ui-grid-a margin-top-20">
+        	<div class="ui-block-a">
+            	<a href="#" data-role="button" data-theme="b" data-mini="true">Select This</a>
+            </div>
+            <div class="ui-block-b">
+            	<a href="#wizard" data-role="button" data-theme="c" data-mini="true" data-transition="flow">Back</a>
+            </div>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Recommendations Page-->
+
+<!--Browse Page-->
+<div data-role="page" id="browse">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="index.html" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <h3>
+        	FiveMinuteFlowers
+        </h3>
+    </div>
+    <div data-role="content">
+    	<div class="purple-banner">
+        	<div class="cool-hand-title">
+            	Baby/Maternity
+            </div>
+        </div>
+        
+        <div class="browse-block-container">
+        	<div class="browse-image-block">
+            	<div class="browse-image-price">
+                	$139.99
+                </div>
+            	<img src="img/flowers/FLO-00501_low.jpg" />
+            </div>
+            <div class="browse-image-block">
+            	<div class="browse-image-price">
+                	$139.99
+                </div>
+            	<img src="img/flowers/FLO-00501_low.jpg" />
+            </div>
+            <div class="browse-image-block">
+            	<div class="browse-image-price">
+                	$139.99
+                </div>
+            	<img src="img/flowers/FLO-00501_low.jpg" />
+            </div>
+            <div class="browse-image-block">
+            	<div class="browse-image-price">
+                	$139.99
+                </div>
+            	<img src="img/flowers/FLO-00501_low.jpg" />
+            </div>
+            <div class="browse-image-block">
+            	<div class="browse-image-price">
+                	$139.99
+                </div>
+            	<img src="img/flowers/FLO-00501_low.jpg" />
+            </div>
+            <div class="browse-image-block">
+            	<div class="browse-image-price">
+                	$139.99
+                </div>
+            	<img src="img/flowers/FLO-00501_low.jpg" />
+            </div>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Browse Page-->
+
+<!--Single Flower Page-->
+<div data-role="page" id="single">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <h3>
+        	FiveMinuteFlowers
+        </h3>
+    </div>
+    <div data-role="content">
+    	<div class="single-image margin-top-10">
+        	<div class="big-image-name">
+            	Some Cool Flowers
+            </div>
+            <div class="big-image-price">
+            	$139.99
+            </div>
+        	<img src="img/flowers/FLO-00501_low.jpg" />
+        </div>
+        
+        <div class="flower-long-description margin-top-30">
+        	Pale blooms in delicate, tinted shades of white and peach accented with hypericum berries, and displayed in a decorative container create a pretty display that would make a lovely gift for a favorite friend, mother or grandmother.
+        </div>
+        
+        <div class="button-80-container margin-top-20">
+        	<a href="#" data-role="button" data-theme="b">Select Arrangement</a>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Single Flower Page-->
+
+<!--Payment Page-->
+<div data-role="page" id="payment">
+	<div data-role="header" data-theme="fmf">
+        <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <h3>
+        	FiveMinuteFlowers
+        </h3>
+    </div>
+    <div data-role="content">
+    	<div class="margin-top-10 txt-center">
+        	<strong>Enter Payment Information</strong>
+        </div>
+        <div class="margin-top-20">
+        	<select name="select-choice-1" data-native-menu="false">
+                <option value="choose-one" data-placeholder="true">Choose Saved Billing Address</option>
+                <option value="">219 E Crystal Cove Terrace, San Francisco, CA 94134</option>
+            </select>
+        </div>
+        <div id="billing-address" class="margin-top-20">
+        	<div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>First Name</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Last Name</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a margin-top-10">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing Address 1</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Billing Address 2</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing City</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Billing State</strong>
+                    </div>
+                    <div>
+                    	<select name="select-choice-1" data-native-menu="false">
+                            <option value="choose-one" data-placeholder="true">Choose State</option>
+                            <option value="california">California</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+            	<div class="ui-block-a padding-right-5">
+                	<div>
+                    	<strong>Billing Zipcode</strong>
+                    </div>
+                    <div>
+                    	<input type="text" />
+                    </div>
+                </div>
+                <div class="ui-block-b padding-left-5">
+                	<div>
+                    	<strong>Country</strong>
+                    </div>
+                    <div>
+                    	<input type="text" value="USA" disabled />
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup">
+                    	<input type="checkbox" name="save-billing-address" id="save-billing-address-button" class="custom" />
+                    	<label for="save-billing-address-button">Want to save this address for next time?</label>
+                	</fieldset>
+                </div>
+            </div>
+            <div class="medium-button">
+            	<a href="#" data-role="button" data-theme="b">Next Step</a>
+            </div>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#orders" data-icon="bars">My Orders</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Payment Page-->
+
+<script type="text/javascript" src="phonegap.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="libs/jquery-mobile/jquery.mobile-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/fmf.js"></script>
+<script type="text/javascript" src="js/autoloader.js"></script>
+
+</body>
+</html>

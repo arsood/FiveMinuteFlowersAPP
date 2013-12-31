@@ -12,6 +12,7 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\r
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\res\drawable-mdpi\icon.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\res\drawable-xhdpi\icon.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\backups \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\config.xml \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\cordova.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\cordova_plugins.js \
@@ -27,6 +28,7 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\plugins \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\res \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\spec \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\backups\index.html \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css\fmf.css \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css\helpers.css \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\css\index.css \
@@ -34,13 +36,19 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\fonts\ArchitectsDaughter.woff \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\fonts\Niconne.woff \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs\coming-soon.html \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs\kill-error.html \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs\wizard-field-error.html \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\cc.png \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\clock.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flowers \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flower_types \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\loader.GIF \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\logo-small.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\logo.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\nav-left.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\nav-right.png \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\secured.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flowers\FLO-00401_low.jpg \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flowers\FLO-00402_low.jpg \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flowers\FLO-00501_low.jpg \
@@ -275,6 +283,7 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flower_types\short-bushy.jpg \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flower_types\special.jpg \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flower_types\tall-skinny.jpg \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\js\autoloader.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\js\fmf.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\js\index.js \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\libs\font-awesome \
