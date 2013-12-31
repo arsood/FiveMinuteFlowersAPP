@@ -196,6 +196,7 @@ function submitOrder() {
 				//Send the beast to the pits of the backend!
 				
 				$.post(localStorage.path_to_actions, {
+					userUuid: 1, //CHANGE THIS!!
 					arrangementSelected: localStorage.arrangementSelected,
 					arrangementPrice: localStorage.arrangementPrice,
 					paymentToken: response['id'],
@@ -218,6 +219,8 @@ function submitOrder() {
 					personalMessage: $("#personal-message").val()
 				}, function() {
 					hideLoader();
+					$("#success-image").attr("src", "img/flowers/" + localStorage.arrangementSelected + "_low.jpg");
+					$.mobile.changePage("#success", { transition: "fade" });
 				});
 			}
 		});
@@ -238,4 +241,11 @@ function selectPersonal(arrangement, price) {
 	localStorage.arrangementSelected = arrangement;
 	localStorage.arrangementPrice = price;
 	$.mobile.changePage("#billing", { transition: "fade" });
+}
+
+//Complete order and redirect to index while reloading DOM
+
+function completeOrder() {
+	$.mobile.changePage("#index", { transition: "fade" });
+	location.reload();
 }
