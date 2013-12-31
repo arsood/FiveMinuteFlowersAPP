@@ -77,7 +77,7 @@ $(document).on("pagebeforeshow", "#single", function() {
 		$("#single-flower-price").html("$" + flowerData["retail_price"]);
 		$("#single-flower-desc").html(flowerData["flower_description"]);
 		$("#single-flower-image").attr("src", localStorage.path_to_images  + flowerData["arrangement_code"] + "_low.jpg");
-		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"] + "');");
+		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"] + "', '" + flowerData["retail_price"] + "');");
 		$("#single-page-content").fadeIn();
 		hideLoader();
 	});
@@ -119,7 +119,7 @@ $(document).on("pagebeforeshow", "#personalized", function() {
 			$("#personalized-image-name").html(personalizedArray[0]["arrangement_name"]);
 			$("#personalized-image-price").html("$" + personalizedArray[0]["retail_price"]);
 			$("#personalized-image-desc").html(personalizedArray[0]["flower_description"]);
-			$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[0]["arrangement_code"] + "');");
+			$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[0]["arrangement_code"] + "', '" + personalizedArray[0]["retail_price"] + "');");
 			
 			//Show the personalization page
 			
@@ -145,7 +145,7 @@ $("#personalized-forward").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
-		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "');");
+		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "');");
 		$(".ajax-block").fadeOut();
 	}
 });
@@ -163,7 +163,7 @@ $("#personalized-back").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
-		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "');");
+		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "');");
 		$(".ajax-block").fadeOut();
 	}
 });

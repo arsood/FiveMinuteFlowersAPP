@@ -1,3 +1,5 @@
+localStorage.path_to_actions = "http://localhost/sites/five_minute/actions.php";
+
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { //Function to work when device is up
@@ -153,22 +155,79 @@ function submitDelivery() {
 		alert("Please enter all information");
 		return false;
 	} else {
-		//AJAX here and next part on callback
-		
 		$.mobile.changePage("#message", { transition: "fade" });
 	};
 }
 
+//Validate and submit entire order
+
+function submitOrder() {
+	if (
+		$("#payment-card-num").val() == "" ||
+		$("#payment-expire-month").val() == "" ||
+		$("#payment-expire-year").val() == "" ||
+		$("#payment-security-code").val() == ""
+	) {
+		alert("Please enter all information");
+		return false;
+	} else {
+		showLoader();
+		
+		//Get Stripe token
+		
+		Stripe.card.createToken({
+			number: $('#payment-card-num').val(),
+			cvc: $('#payment-security-code').val(),
+			exp_month: $('#payment-expire-month').val(),
+			exp_year: $('#payment-expire-year').val()
+		}, function(status, response) {
+			if (response.error) {
+				alert(response.error.message);
+				return false;
+			} else {
+				//Send the beast to the pits of the backend!
+				
+				$.post(localStorage.path_to_actions, {
+					arrangementSelected: localStorage.arrangementSelected,
+					arrangementPrice: localStorage.arrangementPrice,
+					paymentToken: response['id'],
+					saveBilling: $("#save-billing-address-button").prop("checked"),
+					saveDelivery: $("#save-delivery-address-button").prop("checked"),
+					billingFirstName: $("#billing-first-name").val(),
+					billingLastName: $("#billing-last-name").val(),
+					billingAddress1: $("#billing-address-1").val(),
+					billingAddress2: $("#billing-address-2").val(),
+					billingCity: $("#billing-city").val(),
+					billingState: $("#billing-state").val(),
+					billingZipcode: $("#billing-zipcode").val(),
+					deliveryFirstName: $("#delivery-first-name").val(),
+					deliveryLastName: $("#delivery-last-name").val(),
+					deliveryAddress1: $("#delivery-address-1").val(),
+					deliveryAddress2: $("#delivery-address-2").val(),
+					deliveryCity: $("#delivery-city").val(),
+					deliveryState: $("#delivery-state").val(),
+					deliveryZipcode: $("#delivery-zipcode").val(),
+					personalMessage: $("#personal-message").val()
+				}, function() {
+					hideLoader();
+				});
+			}
+		});
+	}
+}
+
 //Select arrangement handler
 
-function selectArrange(arrangement) {
+function selectArrange(arrangement, price) {
 	localStorage.arrangementSelected = arrangement;
+	localStorage.arrangementPrice = price;
 	$.mobile.changePage("#billing", { transition: "fade" });
 }
 
 //Select personalized arrangement handler
 
-function selectPersonal(arrangement) {
+function selectPersonal(arrangement, price) {
 	localStorage.arrangementSelected = arrangement;
+	localStorage.arrangementPrice = price;
 	$.mobile.changePage("#billing", { transition: "fade" });
 }

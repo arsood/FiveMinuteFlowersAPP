@@ -689,8 +689,8 @@
             <div>
                 <div data-role="fieldcontain">
                     <fieldset data-role="controlgroup">
-                    	<input type="checkbox" name="save-billing-address" id="save-billing-address-button" class="custom" />
-                    	<label for="save-billing-address-button">Want to save this person for next time?</label>
+                    	<input type="checkbox" name="save-delivery-address" id="save-delivery-address-button" class="custom" />
+                    	<label for="save-delivery-address-button">Want to save this person for next time?</label>
                 	</fieldset>
                 </div>
             </div>
@@ -725,10 +725,10 @@
         	<strong>Attach a Personal Message</strong>
         </div>
         <div class="margin-top-30 message-textarea">
-        	<textarea></textarea>
+        	<textarea id="personal-message"></textarea>
         </div>
         <div class="margin-top-20 medium-button">
-        	<a href="#" data-role="button" data-theme="b">Last Step</a>
+        	<a href="#payment" data-role="button" data-theme="b" data-transition="slide">Last Step</a>
         </div>
     </div>
     <div data-position="fixed" data-role="footer" data-theme="c">
@@ -766,7 +766,7 @@
         	<strong>Card Number</strong>
         </div>
         <div class="margin-top-10">
-        	<input type="tel" />
+        	<input id="payment-card-num" type="tel" />
         </div>
         <div class="ui-grid-a margin-top-20">
             <div class="ui-block-a padding-right-5">
@@ -774,20 +774,20 @@
                     <strong>Expiration Month</strong>
                 </div>
                 <div>
-                    <select data-native-menu="false">
+                    <select id="payment-expire-month" data-native-menu="false">
                     	<option value="" data-placeholder="true">Choose Month</option>
-                    	<option>01</option>
-                        <option>02</option>
-                        <option>03</option>
-                        <option>04</option>
-                        <option>05</option>
-                        <option>06</option>
-                        <option>07</option>
-                        <option>08</option>
-                        <option>09</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
+                    	<option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
                     </select>
                 </div>
             </div>
@@ -796,16 +796,16 @@
                     <strong>Expiration Year</strong>
                 </div>
                 <div>
-                    <select data-native-menu="false">
+                    <select id="payment-expire-year" data-native-menu="false">
                     	<option value="" data-placeholder="true">Choose Year</option>
-                    	<option>2013</option>
-                        <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
-                        <option>2017</option>
-                        <option>2018</option>
-                        <option>2019</option>
-                        <option>2020</option>
+                    	<option value="2013">2013</option>
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
                     </select>
                 </div>
             </div>
@@ -814,10 +814,10 @@
         	<strong>Card Security Code</strong>
         </div>
         <div class="margin-top-10">
-        	<input type="tel" />
+        	<input id="payment-security-code" type="tel" />
         </div>
         <div class="margin-top-10 medium-button">
-        	<a href="#" data-role="button" data-theme="b">Finish</a>
+        	<a onClick="submitOrder();" data-role="button" data-theme="b">Finish</a>
         </div>
     </div>
     <div data-position="fixed" data-role="footer" data-theme="c">
@@ -838,6 +838,13 @@
 <script type="text/javascript" src="libs/jquery-mobile/jquery.mobile-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/fmf.js"></script>
 <script type="text/javascript" src="js/autoloader.js"></script>
+
+<!--STRIPE-->
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+Stripe.setPublishableKey('pk_test_I6HFzdJUUqnJvxP2Ls3yjFQ4');
+</script>
+<!--/STRIPE-->
 
 </body>
 </html>
