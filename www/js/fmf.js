@@ -18,7 +18,7 @@ function onDeviceReady() { //Function to work when device is up
 
 //Alter position of clock logo
 
-$(".clock-logo").css("left", ($(window).width() / 2) - 75);
+$(".clock-logo").css("left", ($(window).width() / 2) - 85);
 
 //Create cool looking card after new entry
 
