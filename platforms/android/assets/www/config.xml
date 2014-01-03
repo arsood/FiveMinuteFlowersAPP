@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.emboldenmedia.fiveminuteflowers" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>FiveMinuteFlowers</name>
     <description>
         Have 5 minutes? Order some flowers.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
+    <author email="support@fiveminuteflowers.com" href="http://fiveminuteflowers.com">
         PhoneGap Team
     </author>
     <feature name="http://api.phonegap.com/1.0/device" />
@@ -47,7 +47,6 @@
     <gap:splash gap:platform="ios" height="1024" src="res/screen/ios/screen-ipad-portrait.png" width="768" />
     <gap:splash gap:platform="ios" height="768" src="res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
-    <access origin="http://127.0.0.1*" />
 	<access origin="*" />
     <content src="index.html" />
 </widget>

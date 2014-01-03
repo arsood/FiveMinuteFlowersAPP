@@ -2,8 +2,8 @@
 This document loads all pages and handles all of the buttloads of AJAX calls :P
 */
 
-localStorage.path_to_layouts = "http://localhost/sites/five_minute/page_layouts.php";
-localStorage.path_to_interface = "http://localhost/sites/five_minute/ajax_interface.php";
+localStorage.path_to_layouts = "http://fiveminuteflowers.com/api/page_layouts.php";
+localStorage.path_to_interface = "http://fiveminuteflowers.com/api/ajax_interface.php";
 localStorage.path_to_images = "img/flowers/";
 
 //General loading functions
@@ -31,9 +31,7 @@ function clearRatingColor() {
 
 $(document).on("pageshow", "#index", function() {
 	showLoader();
-});
-
-$(document).on("pagebeforeshow", "#index", function() {
+	
 	$("#occasion-list").load(localStorage.path_to_layouts + "?action=read&page-layout=index-categories", function() {
 		hideLoader();
 	});
@@ -55,11 +53,11 @@ function setSpecificFlower(flower) {
 
 $(document).on("pageshow", "#browse", function() {
 	showLoader();
-});
-
-$(document).on("pagebeforeshow", "#browse", function() {
+	$("#browse-image-blocks").fadeOut("fast");
+	
 	$("#browse-page-title").html(localStorage.categoryChosen);
 	$("#browse-image-blocks").load(localStorage.path_to_layouts + "?action=read&page-layout=browse-images&category=" + encodeURIComponent(localStorage.categoryChosen), function() {
+		$("#browse-image-blocks").fadeIn();
 		hideLoader();
 	});
 });
@@ -68,9 +66,8 @@ $(document).on("pagebeforeshow", "#browse", function() {
 
 $(document).on("pageshow", "#single", function() {
 	showLoader();
-});
-
-$(document).on("pagebeforeshow", "#single", function() {
+	$("#single-page-content").fadeOut("fast");
+	
 	$.get(localStorage.path_to_interface + "?action=get-flower-info&arrangement=" + localStorage.specificFlower, function(data) {
 		var flowerData = $.parseJSON(data);
 		$("#single-flower-name").html(flowerData["arrangement_name"]);
@@ -97,9 +94,7 @@ function setPersonalizedOptions() {
 
 $(document).on("pageshow", "#personalized", function() {
 	showLoader();
-});
-
-$(document).on("pagebeforeshow", "#personalized", function() {
+	
 	$.post(localStorage.path_to_interface, {
 		getAction: "get-personalized-array",
 		personalizedBudget: localStorage.personalBudget,
@@ -238,19 +233,44 @@ $("#payment-saved-delivery").on("change", function(event) {
 	}
 });
 
-//Load in saved people
+//Load in saved people to wizard
 
 $(document).on("pageshow", "#wizard", function() {
 	showLoader();
-});
-
-$(document).on("pagebeforeshow", "#wizard", function() {
+	
 	$.post(localStorage.path_to_layouts + "?action=read&page-layout=recipient-list", {
 		method: "read",
 		action: "get-recipients",
 		uuid: 1 //CHANGE THIS!!!
 	}, function(data) {
 		$("#recipient-select").html(data).trigger("create");
+		hideLoader();
+	});
+});
+
+//Load in saved people to account page
+
+$(document).on("pageshow", "#account", function() {
+	showLoader();
+	
+	//Get recipients
+	
+	$.post(localStorage.path_to_layouts + "?action=read&page-layout=recipient-list-account", {
+		method: "read",
+		action: "get-account-recipients",
+		uuid: 1 //CHANGE THIS!!!
+	}, function(data) {
+		$("#account-recipients").html(data).trigger("create");
+	});
+	
+	//Get billing
+	
+	$.post(localStorage.path_to_layouts + "?action=read&page-layout=billing-list-account", {
+		method: "read",
+		action: "get-account-billing",
+		uuid: 1 //CHANGE THIS!!!
+	}, function(data) {
+		$("#account-billing").html(data).trigger("create");
 		hideLoader();
 	});
 });

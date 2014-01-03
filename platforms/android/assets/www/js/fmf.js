@@ -1,4 +1,4 @@
-localStorage.path_to_actions = "http://localhost/sites/five_minute/actions.php";
+localStorage.path_to_actions = "http://fiveminuteflowers.com/api/actions.php";
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -7,7 +7,7 @@ function onDeviceReady() { //Function to work when device is up
 	
 	$.get("http://emboldenmedia.com/apps/fmf/kill_check.php", function(data){
 		if (data == "kill") {
-			window.location = "/html/dialogs/kill-error.html";
+			window.location = "html/dialogs/kill-error.html";
 		}
 	});
 
@@ -18,7 +18,7 @@ function onDeviceReady() { //Function to work when device is up
 
 //Alter position of clock logo
 
-$(".clock-logo").css("left", ($(window).width() / 2) - 75);
+$(".clock-logo").css("left", ($(window).width() / 2) - 85);
 
 //Create cool looking card after new entry
 
@@ -196,6 +196,7 @@ function submitOrder() {
 				//Send the beast to the pits of the backend!
 				
 				$.post(localStorage.path_to_actions, {
+					userUuid: 1, //CHANGE THIS!!
 					arrangementSelected: localStorage.arrangementSelected,
 					arrangementPrice: localStorage.arrangementPrice,
 					paymentToken: response['id'],
@@ -218,6 +219,8 @@ function submitOrder() {
 					personalMessage: $("#personal-message").val()
 				}, function() {
 					hideLoader();
+					$("#success-image").attr("src", "img/flowers/" + localStorage.arrangementSelected + "_low.jpg");
+					$.mobile.changePage("#success", { transition: "fade" });
 				});
 			}
 		});
@@ -238,4 +241,47 @@ function selectPersonal(arrangement, price) {
 	localStorage.arrangementSelected = arrangement;
 	localStorage.arrangementPrice = price;
 	$.mobile.changePage("#billing", { transition: "fade" });
+}
+
+//Complete order and redirect to index while reloading DOM
+
+function completeOrder() {
+	$.mobile.changePage("#index", { transition: "fade" });
+	location.reload();
+}
+
+//Remove saved recipients
+
+function removeRec(id) {
+	var removeConf = confirm("Are you sure you want to remove this person?");
+	
+	if (removeConf) {
+		$.post(localStorage.path_to_interface, {
+			userUuid: 1, //CHANGE THIS!!!
+			method: "write",
+			action: "remove-recipient",
+			recId: id
+		}, function() {
+			$("#saved-rec-" + id).fadeOut();
+			$("#account-recipients").trigger("change");
+		});
+	}
+}
+
+//Remove saved recipients
+
+function removeBill(id) {
+	var removeConf = confirm("Are you sure you want to remove this address?");
+	
+	if (removeConf) {
+		$.post(localStorage.path_to_interface, {
+			userUuid: 1, //CHANGE THIS!!!
+			method: "write",
+			action: "remove-billing",
+			billId: id
+		}, function() {
+			$("#saved-bill-" + id).fadeOut();
+			$("#account-billing").trigger("change");
+		});
+	}
 }

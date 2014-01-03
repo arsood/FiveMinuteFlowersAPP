@@ -1,4 +1,4 @@
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\gen\com\phonegap\helloworld\R.java \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\gen\com\emboldenmedia\fiveminuteflowers\R.java \
  : C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\res\drawable\icon.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\res\drawable-hdpi\icon.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\res\drawable-ldpi\icon.png \

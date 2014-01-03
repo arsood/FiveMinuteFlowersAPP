@@ -1,11 +1,12 @@
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes.dex : \
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\phonegap\helloworld\BuildConfig.class \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\emboldenmedia\fiveminuteflowers\BuildConfig.class \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\emboldenmedia\fiveminuteflowers\FiveMinuteFlowers.class \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\emboldenmedia\fiveminuteflowers\R$attr.class \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\emboldenmedia\fiveminuteflowers\R$drawable.class \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\emboldenmedia\fiveminuteflowers\R$string.class \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\emboldenmedia\fiveminuteflowers\R$xml.class \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\emboldenmedia\fiveminuteflowers\R.class \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\phonegap\helloworld\FiveMinuteFlowers.class \
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\phonegap\helloworld\R$attr.class \
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\phonegap\helloworld\R$drawable.class \
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\phonegap\helloworld\R$string.class \
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\phonegap\helloworld\R$xml.class \
-C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\com\phonegap\helloworld\R.class \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\org\apache\cordova\camera\CameraLauncher.class \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\org\apache\cordova\camera\ExifHelper.class \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\bin\classes\org\apache\cordova\camera\FileHelper.class \

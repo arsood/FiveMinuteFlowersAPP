@@ -75,7 +75,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -222,7 +221,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -294,7 +292,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -326,7 +323,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -366,7 +362,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -377,7 +372,7 @@
 <!--Billing Page-->
 <div data-role="page" id="billing">
 	<div data-role="header" data-theme="fmf">
-        <a data-role="button" href="#browse" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <a data-role="button" href="#index" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
         <div class="clock-logo">
         	<img src="img/logo-small.png" />
         </div>
@@ -535,7 +530,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -704,7 +698,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -736,7 +729,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -825,7 +817,6 @@
         	<ul>
             	<li><a href="index.html" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
-                <li><a href="#orders" data-icon="bars">My Orders</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
         </div>
@@ -833,11 +824,79 @@
 </div>
 <!--/Payment Page-->
 
+<!--Success Page-->
+<div data-role="page" id="success">
+	<div data-role="header" data-theme="fmf">
+        <div class="clock-logo">
+        	<img src="img/logo-small.png" />
+        </div>
+    </div>
+    <div data-role="content">
+    	<h1 class="txt-center">
+        	Thank You!
+        </h1>
+        <h3 class="txt-center">
+        	Your order has been received and you will be receiving an email shortly with the order details.
+        </h3>
+        <div class="success-flower margin-top-10">
+        	<img id="success-image" src="" />
+        </div>
+        <div class="margin-top-20 medium-button">
+        	<a onClick="completeOrder();" data-role="button" data-theme="b" data-transition="fade">Done</a>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Success Page-->
+
+<!--Account Page-->
+<div data-role="page" id="account">
+	<div data-role="header" data-theme="fmf">
+        <div class="clock-logo">
+        	<img src="img/logo-small.png" />
+        </div>
+    </div>
+    <div data-role="content">
+    	<div class="margin-top-10 txt-center">
+        	<strong>My Account</strong>
+        </div>
+        <div id="account-recipients" class="margin-top-30">
+            <!--AUTOLOADER HERE-->
+        </div>
+        <div id="account-billing" class="margin-top-30">
+            <!--AUTOLOADER HERE-->
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="index.html" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Account Page-->
+
+<!--Phonegap and jQuery Mobile-->
 <script type="text/javascript" src="phonegap.js"></script>
 <script type="text/javascript" src="libs/jquery/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" src="libs/jquery-mobile/jquery.mobile-1.3.2.min.js"></script>
+<!--/Phonegap and jQuery Mobile-->
+
+<!--FMF-->
 <script type="text/javascript" src="js/fmf.js"></script>
 <script type="text/javascript" src="js/autoloader.js"></script>
+<!--/FMF-->
 
 <!--STRIPE-->
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>

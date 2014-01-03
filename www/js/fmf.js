@@ -191,6 +191,7 @@ function submitOrder() {
 		}, function(status, response) {
 			if (response.error) {
 				alert(response.error.message);
+				hideLoader();
 				return false;
 			} else {
 				//Send the beast to the pits of the backend!
