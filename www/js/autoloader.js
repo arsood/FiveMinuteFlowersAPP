@@ -238,7 +238,7 @@ $("#payment-saved-delivery").on("change", function(event) {
 	}
 });
 
-//Load in saved people
+//Load in saved people to wizard
 
 $(document).on("pageshow", "#wizard", function() {
 	showLoader();
@@ -251,6 +251,35 @@ $(document).on("pagebeforeshow", "#wizard", function() {
 		uuid: 1 //CHANGE THIS!!!
 	}, function(data) {
 		$("#recipient-select").html(data).trigger("create");
+		hideLoader();
+	});
+});
+
+//Load in saved people to account page
+
+$(document).on("pageshow", "#account", function() {
+	showLoader();
+});
+
+$(document).on("pagebeforeshow", "#account", function() {
+	//Get recipients
+	
+	$.post(localStorage.path_to_layouts + "?action=read&page-layout=recipient-list-account", {
+		method: "read",
+		action: "get-account-recipients",
+		uuid: 1 //CHANGE THIS!!!
+	}, function(data) {
+		$("#account-recipients").html(data).trigger("create");
+	});
+	
+	//Get billing
+	
+	$.post(localStorage.path_to_layouts + "?action=read&page-layout=billing-list-account", {
+		method: "read",
+		action: "get-account-billing",
+		uuid: 1 //CHANGE THIS!!!
+	}, function(data) {
+		$("#account-billing").html(data).trigger("create");
 		hideLoader();
 	});
 });

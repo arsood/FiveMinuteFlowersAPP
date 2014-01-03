@@ -249,3 +249,39 @@ function completeOrder() {
 	$.mobile.changePage("#index", { transition: "fade" });
 	location.reload();
 }
+
+//Remove saved recipients
+
+function removeRec(id) {
+	var removeConf = confirm("Are you sure you want to remove this person?");
+	
+	if (removeConf) {
+		$.post(localStorage.path_to_interface, {
+			userUuid: 1, //CHANGE THIS!!!
+			method: "write",
+			action: "remove-recipient",
+			recId: id
+		}, function() {
+			$("#saved-rec-" + id).fadeOut();
+			$("#account-recipients").trigger("change");
+		});
+	}
+}
+
+//Remove saved recipients
+
+function removeBill(id) {
+	var removeConf = confirm("Are you sure you want to remove this address?");
+	
+	if (removeConf) {
+		$.post(localStorage.path_to_interface, {
+			userUuid: 1, //CHANGE THIS!!!
+			method: "write",
+			action: "remove-billing",
+			billId: id
+		}, function() {
+			$("#saved-bill-" + id).fadeOut();
+			$("#account-billing").trigger("change");
+		});
+	}
+}
