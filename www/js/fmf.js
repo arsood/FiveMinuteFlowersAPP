@@ -1,4 +1,4 @@
-localStorage.path_to_actions = "http://localhost/sites/five_minute/actions.php";
+localStorage.path_to_actions = "http://fiveminuteflowers.com/api/actions.php";
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
