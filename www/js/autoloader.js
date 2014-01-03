@@ -55,11 +55,13 @@ function setSpecificFlower(flower) {
 
 $(document).on("pageshow", "#browse", function() {
 	showLoader();
+	$("#browse-image-blocks").fadeOut("fast");
 });
 
 $(document).on("pagebeforeshow", "#browse", function() {
 	$("#browse-page-title").html(localStorage.categoryChosen);
 	$("#browse-image-blocks").load(localStorage.path_to_layouts + "?action=read&page-layout=browse-images&category=" + encodeURIComponent(localStorage.categoryChosen), function() {
+		$("#browse-image-blocks").fadeIn();
 		hideLoader();
 	});
 });
@@ -68,6 +70,7 @@ $(document).on("pagebeforeshow", "#browse", function() {
 
 $(document).on("pageshow", "#single", function() {
 	showLoader();
+	$("#single-page-content").fadeOut("fast");
 });
 
 $(document).on("pagebeforeshow", "#single", function() {
