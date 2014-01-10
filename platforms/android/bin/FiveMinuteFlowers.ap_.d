@@ -39,6 +39,7 @@ C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\asset
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs\coming-soon.html \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs\kill-error.html \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\html\dialogs\wizard-field-error.html \
+C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\block-logo.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\cc.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\clock.png \
 C:\Users\arsoo_000\Documents\GitHub\FiveMinuteFlowersAPP\platforms\android\assets\www\img\flowers \

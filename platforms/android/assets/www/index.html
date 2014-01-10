@@ -26,6 +26,27 @@
 </div>-->
 <!--/Template Page-->
 
+<!--Login Page-->
+<div data-role="page" id="login" data-theme="fmf">
+    <div data-role="content">
+    	<div id="login-block-logo">
+        	<img src="img/block-logo.png" />
+        </div>
+    	<div id="login-field">
+        	<div class="txt-center font-white">
+            	<strong>Let's Get Started:</strong>
+            </div>
+            <div class="margin-top-20">
+        		<input id="account-email" type="email" placeholder="Enter your email address" />
+            </div>
+            <div class="margin-top-10 medium-button">
+            	<a onClick="createAccount();" data-role="button" data-theme="b">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/Login Page-->
+
 <!--Index Page-->
 <div data-role="page" id="index">
 
@@ -73,7 +94,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -145,7 +166,7 @@
             <div class="margin-top-20 margin-bottom-10">
                 Select an occasion (optional):
             </div>
-            <select id="personal-occasion" name="select-occasion" data-native-menu="false">
+            <select id="personal-occasion" name="select-occasion" data-native-menu="true">
                 <option value="" data-placeholder="true">Choose an occasion</option>
                 <option value="Baby/Maternity">Baby/Maternity</option>
                 <option value="Birthday">Birthday</option>
@@ -219,7 +240,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -290,7 +311,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -302,7 +323,7 @@
 <!--Browse Page-->
 <div data-role="page" id="browse">
 	<div data-role="header" data-theme="fmf">
-        <a data-role="button" href="index.html" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <a data-role="button" href="#index" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
         <div class="clock-logo">
         	<img src="img/logo-small.png" />
         </div>
@@ -321,7 +342,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -360,7 +381,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -372,7 +393,7 @@
 <!--Billing Page-->
 <div data-role="page" id="billing">
 	<div data-role="header" data-theme="fmf">
-        <a data-role="button" href="#index" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
+        <a data-role="button" data-rel="back" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b">Back</a>
         <div class="clock-logo">
         	<img src="img/logo-small.png" />
         </div>
@@ -382,7 +403,7 @@
         	<strong>Enter Billing Information</strong>
         </div>
         <div class="margin-top-20">
-        	<select id="payment-saved-billing" name="select-choice-1" data-native-menu="false">
+        	<select id="payment-saved-billing" name="select-choice-1" data-native-menu="true">
                 <option value="" data-placeholder="true">Choose Saved Billing Address</option>
                 <!--AUTOLOADER HERE-->
             </select>
@@ -438,7 +459,7 @@
                     	<strong>Billing State</strong>
                     </div>
                     <div>
-                    	<select id="billing-state" name="select-choice-1" data-native-menu="false">
+                    	<select id="billing-state" name="select-choice-1" data-native-menu="true">
                             <option value="" data-placeholder="true">Choose State</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -528,7 +549,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -550,7 +571,7 @@
         	<strong>Enter Delivery Information</strong>
         </div>
         <div class="margin-top-20">
-        	<select id="payment-saved-delivery" name="select-choice-1" data-native-menu="false">
+        	<select id="payment-saved-delivery" name="select-choice-1" data-native-menu="true">
                 <option value="" data-placeholder="true">Choose Saved Recipient</option>
                 <!--AUTOLOADER HERE-->
             </select>
@@ -606,7 +627,7 @@
                     	<strong>Delivery State</strong>
                     </div>
                     <div>
-                    	<select id="delivery-state" name="select-choice-1" data-native-menu="false">
+                    	<select id="delivery-state" name="select-choice-1" data-native-menu="true">
                             <option value="" data-placeholder="true">Choose State</option>
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -696,7 +717,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -727,7 +748,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -766,7 +787,7 @@
                     <strong>Expiration Month</strong>
                 </div>
                 <div>
-                    <select id="payment-expire-month" data-native-menu="false">
+                    <select id="payment-expire-month" data-native-menu="true">
                     	<option value="" data-placeholder="true">Choose Month</option>
                     	<option value="01">01</option>
                         <option value="02">02</option>
@@ -788,7 +809,7 @@
                     <strong>Expiration Year</strong>
                 </div>
                 <div>
-                    <select id="payment-expire-year" data-native-menu="false">
+                    <select id="payment-expire-year" data-native-menu="true">
                     	<option value="" data-placeholder="true">Choose Year</option>
                     	<option value="2013">2013</option>
                         <option value="2014">2014</option>
@@ -815,7 +836,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -848,7 +869,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>
@@ -878,7 +899,7 @@
     <div data-position="fixed" data-role="footer" data-theme="c">
     	<div data-role="navbar">
         	<ul>
-            	<li><a href="index.html" data-icon="home">Home</a></li>
+            	<li><a href="#index" data-icon="home">Home</a></li>
                 <li><a href="#wizard" data-icon="star">Wizard</a></li>
                 <li><a href="#account" data-icon="gear">Account</a></li>
             </ul>

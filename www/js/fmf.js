@@ -1,4 +1,7 @@
+/*General application JS*/
+
 localStorage.path_to_actions = "http://fiveminuteflowers.com/api/actions.php";
+localStorage.path_to_interface = "http://fiveminuteflowers.com/api/ajax_interface.php";
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -6,14 +9,32 @@ function onDeviceReady() { //Function to work when device is up
 	//Check for kill code
 	
 	$.get("http://emboldenmedia.com/apps/fmf/kill_check.php", function(data){
-		if (data == "kill") {
+		var ajaxData = $.trim(data);
+		if (ajaxData == "kill") {
 			window.location = "html/dialogs/kill-error.html";
 		}
 	});
+}
 
-	$.post("http://emboldenmedia.com/apps/fmf/", { deviceID: device.uuid }, function(data) {
-		//Here we handle a response
-	});
+//Handle creation of account
+
+function createAccount() {
+	var emailEntered = $("#account-email").val();
+	
+	if (emailEntered == "") {
+		alert("Please enter an email address to get started");
+		return false;
+	}
+	
+	var atpos = emailEntered.indexOf("@");
+	var dotpos = emailEntered.lastIndexOf(".");
+	
+	if (atpos<1 || dotpos < atpos + 2 || dotpos + 2 >= emailEntered.length) {
+		alert("Please enter a valid email address");
+		return false;
+	} else {
+		saveNewUser(emailEntered);		
+	}
 }
 
 //Alter position of clock logo

@@ -15,6 +15,10 @@
   src: local('Niconne'), local('Niconne-Regular'), url('../fonts/Niconne.woff') format('woff');
 }
 
+.font-white {
+	color:#FFF;
+}
+
 .cool-wacky-title {
 	font-family:"Architects Daughter", Arial;
 	font-size:1.6em;
@@ -65,6 +69,22 @@
 
 .clock-logo img {
 	width:180px;
+}
+
+#login-block-logo {
+	width:100%;
+	margin-top:30%;
+	text-align:center;
+	display:none;
+}
+
+#login-block-logo img {
+	width:100%;
+}
+
+#login-field {
+	margin-top:40%;
+	display:none;
 }
 
 /*HOME*/

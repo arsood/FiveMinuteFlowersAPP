@@ -27,6 +27,53 @@ function clearRatingColor() {
 	$("#rating-up").attr("style", "");
 }
 
+//Handle login page
+
+$(document).on("pageshow", "#login", function() {
+	$("#login-block-logo").fadeIn();
+	
+	$.post(localStorage.path_to_interface, {
+		method: "read",
+		action: "check-login",
+		userUuid: 1 //CHANGE THIS!!!
+	}, function(data) {
+		var ajaxData = $.trim(data);
+		if (ajaxData == "yes") {
+			setTimeout(function() {
+				$.mobile.changePage("#index", { transition: "fade" });
+			}, 2000);
+		} else {
+			setTimeout(function() {
+				$("#login-block-logo").fadeOut(function() {
+					$("#login-field").fadeIn("slow");
+				});
+			}, 2000);
+		}
+	});
+});
+
+//Save our new user
+
+function saveNewUser(email) {
+	showLoader();
+	
+	$.post(localStorage.path_to_interface, {
+		method: "write",
+		action: "create-new-user",
+		userEmail: email,
+		userUuid: 1 //CHANGE THIS!!!
+	}, function(data) {
+		var ajaxData = $.trim(data);
+		if (ajaxData == "ok") {
+			$.mobile.changePage("#index", { transition: "fade" });
+			hideLoader();
+		} else {
+			hideLoader();
+			alert("There was an error processing your request");
+		}
+	});
+}
+
 //Get index occasions
 
 $(document).on("pageshow", "#index", function() {
@@ -69,7 +116,8 @@ $(document).on("pageshow", "#single", function() {
 	$("#single-page-content").fadeOut("fast");
 	
 	$.get(localStorage.path_to_interface + "?action=get-flower-info&arrangement=" + localStorage.specificFlower, function(data) {
-		var flowerData = $.parseJSON(data);
+		var ajaxData = $.trim(data);
+		var flowerData = $.parseJSON(ajaxData);
 		$("#single-flower-name").html(flowerData["arrangement_name"]);
 		$("#single-flower-price").html("$" + flowerData["retail_price"]);
 		$("#single-flower-desc").html(flowerData["flower_description"]);
@@ -171,7 +219,7 @@ $(document).ready(function() {
 		pageLayout: "billing-selects",
 		uuid: 1 //CHANGE THIS!!!!!!!!
 	}, function(data) {
-		ajaxData = $.trim(data);
+		var ajaxData = $.trim(data);
 		if (ajaxData == "none") {
 			return false;
 		} else {
@@ -187,7 +235,7 @@ $(document).ready(function() {
 		pageLayout: "delivery-selects",
 		uuid: 1 //CHANGE THIS!!!!!!!!
 	}, function(data) {
-		ajaxData = $.trim(data);
+		var ajaxData = $.trim(data);
 		if (ajaxData == "none") {
 			return false;
 		} else {

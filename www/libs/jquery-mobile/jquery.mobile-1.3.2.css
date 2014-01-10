@@ -71,6 +71,11 @@
 .ui-bar-a a.ui-link:active {
 	color: #2489ce /*{a-bar-link-active}*/;
 }
+
+.ui-body-fmf, .ui-overlay-fmf { 
+	background:#693695; 
+}
+
 .ui-body-a,
 .ui-overlay-a {
 	border: 1px solid 		#444 /*{a-body-border}*/;
