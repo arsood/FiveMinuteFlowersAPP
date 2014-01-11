@@ -35,7 +35,7 @@ $(document).on("pageshow", "#login", function() {
 	$.post(localStorage.path_to_interface, {
 		method: "read",
 		action: "check-login",
-		userUuid: device.uuid //CHANGE THIS!!!
+		userUuid: device.uuid
 	}, function(data) {
 		var ajaxData = $.trim(data);
 		if (ajaxData == "yes") {
@@ -61,7 +61,7 @@ function saveNewUser(email) {
 		method: "write",
 		action: "create-new-user",
 		userEmail: email,
-		userUuid: device.uuid //CHANGE THIS!!!
+		userUuid: device.uuid
 	}, function(data) {
 		var ajaxData = $.trim(data);
 		if (ajaxData == "ok") {
@@ -217,7 +217,7 @@ $(document).ready(function() {
 	$.post(localStorage.path_to_interface, {
 		action: "read",
 		pageLayout: "billing-selects",
-		uuid: device.uuid //CHANGE THIS!!!!!!!!
+		uuid: device.uuid
 	}, function(data) {
 		var ajaxData = $.trim(data);
 		if (ajaxData == "none") {
@@ -233,7 +233,7 @@ $(document).ready(function() {
 	$.post(localStorage.path_to_interface, {
 		action: "read",
 		pageLayout: "delivery-selects",
-		uuid: device.uuid //CHANGE THIS!!!!!!!!
+		uuid: device.uuid
 	}, function(data) {
 		var ajaxData = $.trim(data);
 		if (ajaxData == "none") {
@@ -289,7 +289,7 @@ $(document).on("pageshow", "#wizard", function() {
 	$.post(localStorage.path_to_layouts + "?action=read&page-layout=recipient-list", {
 		method: "read",
 		action: "get-recipients",
-		uuid: device.uuid //CHANGE THIS!!!
+		uuid: device.uuid
 	}, function(data) {
 		$("#recipient-select").html(data).trigger("create");
 		hideLoader();
@@ -306,7 +306,7 @@ $(document).on("pageshow", "#account", function() {
 	$.post(localStorage.path_to_layouts + "?action=read&page-layout=recipient-list-account", {
 		method: "read",
 		action: "get-account-recipients",
-		uuid: device.uuid //CHANGE THIS!!!
+		uuid: device.uuid
 	}, function(data) {
 		$("#account-recipients").html(data).trigger("create");
 	});
@@ -316,7 +316,7 @@ $(document).on("pageshow", "#account", function() {
 	$.post(localStorage.path_to_layouts + "?action=read&page-layout=billing-list-account", {
 		method: "read",
 		action: "get-account-billing",
-		uuid: device.uuid //CHANGE THIS!!!
+		uuid: device.uuid
 	}, function(data) {
 		$("#account-billing").html(data).trigger("create");
 		hideLoader();

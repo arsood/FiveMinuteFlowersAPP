@@ -228,7 +228,7 @@ function submitOrder() {
 				//Send the beast to the pits of the backend!
 				
 				$.post(localStorage.path_to_actions, {
-					userUuid: 1, //CHANGE THIS!!
+					userUuid: device.uuid,
 					arrangementSelected: localStorage.arrangementSelected,
 					arrangementPrice: localStorage.arrangementPrice,
 					paymentToken: response['id'],
@@ -289,7 +289,7 @@ function removeRec(id) {
 	
 	if (removeConf) {
 		$.post(localStorage.path_to_interface, {
-			userUuid: 1, //CHANGE THIS!!!
+			userUuid: device.uuid,
 			method: "write",
 			action: "remove-recipient",
 			recId: id
@@ -307,7 +307,7 @@ function removeBill(id) {
 	
 	if (removeConf) {
 		$.post(localStorage.path_to_interface, {
-			userUuid: 1, //CHANGE THIS!!!
+			userUuid: device.uuid,
 			method: "write",
 			action: "remove-billing",
 			billId: id
