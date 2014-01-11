@@ -1,13 +1,16 @@
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady() { //Function to work when device is up
+	runApp();
+	runLoader();
+}
+
+function runApp() { //Run the app
+
 /*General application JS*/
 
 localStorage.path_to_actions = "http://fiveminuteflowers.com/api/actions.php";
 localStorage.path_to_interface = "http://fiveminuteflowers.com/api/ajax_interface.php";
-
-/*document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() { //Function to work when device is up
-	//Check for kill code
-}*/
 
 //Check for kill code
 
@@ -317,3 +320,5 @@ function removeBill(id) {
 		});
 	}
 }
+
+} //Finish running the app
