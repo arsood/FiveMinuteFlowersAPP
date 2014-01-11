@@ -3,18 +3,20 @@
 localStorage.path_to_actions = "http://fiveminuteflowers.com/api/actions.php";
 localStorage.path_to_interface = "http://fiveminuteflowers.com/api/ajax_interface.php";
 
-document.addEventListener("deviceready", onDeviceReady, false);
+/*document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() { //Function to work when device is up
 	//Check for kill code
-	
-	$.get("http://emboldenmedia.com/apps/fmf/kill_check.php", function(data){
-		var ajaxData = $.trim(data);
-		if (ajaxData == "kill") {
-			window.location = "html/dialogs/kill-error.html";
-		}
-	});
-}
+}*/
+
+//Check for kill code
+
+$.get("http://emboldenmedia.com/apps/fmf/kill_check.php", function(data){
+	var ajaxData = $.trim(data);
+	if (ajaxData == "kill") {
+		window.location = "html/dialogs/kill-error.html";
+	}
+});
 
 //Handle creation of account
 
