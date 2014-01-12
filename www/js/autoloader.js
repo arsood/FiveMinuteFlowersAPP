@@ -1,5 +1,3 @@
-function runLoader() { //Run the loader
-
 /*
 This document loads all pages and handles all of the buttloads of AJAX calls :P
 */
@@ -322,5 +320,3 @@ $(document).on("pageshow", "#account", function() {
 		hideLoader();
 	});
 });
-
-} //Finish loading everything

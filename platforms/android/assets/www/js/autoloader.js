@@ -1,5 +1,3 @@
-function runLoader() { //Run the loader
-
 /*
 This document loads all pages and handles all of the buttloads of AJAX calls :P
 */
@@ -215,38 +213,36 @@ $("#personalized-back").click(function() {
 
 //Get saved billing and delivery information
 
-$(document).ready(function() {
-	$.post(localStorage.path_to_interface, {
-		action: "read",
-		pageLayout: "billing-selects",
-		uuid: device.uuid
-	}, function(data) {
-		var ajaxData = $.trim(data);
-		if (ajaxData == "none") {
-			return false;
-		} else {
-			var savedBillingInfo = $.parseJSON(ajaxData);
-			$(savedBillingInfo).each(function(index, element) {
-			   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
-			});
-		}
-	});
-	
-	$.post(localStorage.path_to_interface, {
-		action: "read",
-		pageLayout: "delivery-selects",
-		uuid: device.uuid
-	}, function(data) {
-		var ajaxData = $.trim(data);
-		if (ajaxData == "none") {
-			return false;
-		} else {
-			var savedDeliveryInfo = $.parseJSON(ajaxData);
-			$(savedDeliveryInfo).each(function(index, element) {
-			   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change"); 
-			});
-		}
-	});
+$.post(localStorage.path_to_interface, {
+	action: "read",
+	pageLayout: "billing-selects",
+	uuid: device.uuid
+}, function(data) {
+	var ajaxData = $.trim(data);
+	if (ajaxData == "none") {
+		return false;
+	} else {
+		var savedBillingInfo = $.parseJSON(ajaxData);
+		$(savedBillingInfo).each(function(index, element) {
+		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
+		});
+	}
+});
+
+$.post(localStorage.path_to_interface, {
+	action: "read",
+	pageLayout: "delivery-selects",
+	uuid: device.uuid
+}, function(data) {
+	var ajaxData = $.trim(data);
+	if (ajaxData == "none") {
+		return false;
+	} else {
+		var savedDeliveryInfo = $.parseJSON(ajaxData);
+		$(savedDeliveryInfo).each(function(index, element) {
+		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change"); 
+		});
+	}
 });
 
 //Enter saved billing information into form from JSON array
@@ -324,5 +320,3 @@ $(document).on("pageshow", "#account", function() {
 		hideLoader();
 	});
 });
-
-} //Finish loading everything
