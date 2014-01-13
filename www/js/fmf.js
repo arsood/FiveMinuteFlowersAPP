@@ -8,6 +8,13 @@ localStorage.path_to_images = "img/flowers/";
 document.addEventListener("deviceready", onDeviceReady, true);
 
 function onDeviceReady() {
+	
+var networkState = navigator.connection.type;
+
+if (networkState == "none") {
+	alert("Please connect to the internet to use this app :)");
+	return false;
+}
 
 //Check for kill code
 
