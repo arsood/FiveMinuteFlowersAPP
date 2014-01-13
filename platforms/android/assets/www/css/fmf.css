@@ -326,6 +326,13 @@
 	height:200px;
 }
 
+/*Confirm Order*/
+
+.order-confirm-arrangement {
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
 /*Success Page*/
 
 .success-flower {

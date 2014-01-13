@@ -20,7 +20,6 @@ $.get("http://emboldenmedia.com/apps/fmf/kill_check.php", function(data){
 
 //Handle login page
 
-//$(document).on("pageshow", "#login", function() {
 $("#login-block-logo").fadeIn();
 
 $.post(localStorage.path_to_interface, {
@@ -41,7 +40,6 @@ $.post(localStorage.path_to_interface, {
 		}, 2000);
 	}
 });
-//});
 
 //Get saved billing and delivery information
 
@@ -357,14 +355,6 @@ function selectArrange(arrangement, price, name) {
 	$.mobile.changePage("#billing", { transition: "fade" });
 }
 
-//Select personalized arrangement handler
-
-function selectPersonal(arrangement, price) {
-	localStorage.arrangementSelected = arrangement;
-	localStorage.arrangementPrice = price;
-	$.mobile.changePage("#billing", { transition: "fade" });
-}
-
 //Complete order and redirect to index while reloading DOM
 
 function completeOrder() {
@@ -529,7 +519,7 @@ $(document).on("pageshow", "#personalized", function() {
 			$("#personalized-image-name").html(personalizedArray[0]["arrangement_name"]);
 			$("#personalized-image-price").html("$" + personalizedArray[0]["retail_price"]);
 			$("#personalized-image-desc").html(personalizedArray[0]["flower_description"]);
-			$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[0]["arrangement_code"] + "', '" + personalizedArray[0]["retail_price"] + "');");
+			$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[0]["arrangement_code"] + "', '" + personalizedArray[0]["retail_price"] + "', '" + personalizedArray[0]["arrangement_name"] + "');");
 			
 			//Show the personalization page
 			
@@ -555,7 +545,7 @@ $("#personalized-forward").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
-		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "');");
+		$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "', '" + personalizedArray[newIndex]["arrangement_name"] + "');");
 		$(".ajax-block").fadeOut();
 	}
 });
@@ -573,7 +563,7 @@ $("#personalized-back").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
-		$("#personalized-select").attr("onClick", "selectPersonal('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "');");
+		$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "', '" + personalizedArray[newIndex]["arrangement_name"] + "');");
 		$(".ajax-block").fadeOut();
 	}
 });

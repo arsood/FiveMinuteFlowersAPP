@@ -273,9 +273,9 @@ function submitDelivery() {
 	};
 }
 
-//Validate and submit entire order
+//Confirm order
 
-function submitOrder() {
+function confirmOrder() {
 	if (
 		$("#payment-card-num").val() == "" ||
 		$("#payment-expire-month").val() == "" ||
@@ -300,45 +300,60 @@ function submitOrder() {
 				hideLoader();
 				return false;
 			} else {
-				//Send the beast to the pits of the backend!
+				localStorage.stripeToken = response["id"];
+				$(".success-flower img").attr("src", "img/flowers/" + localStorage.arrangementSelected + "_low.jpg");
 				
-				$.post(localStorage.path_to_actions, {
-					userUuid: device.uuid,
-					arrangementSelected: localStorage.arrangementSelected,
-					arrangementPrice: localStorage.arrangementPrice,
-					paymentToken: response['id'],
-					saveBilling: $("#save-billing-address-button").prop("checked"),
-					saveDelivery: $("#save-delivery-address-button").prop("checked"),
-					billingFirstName: $("#billing-first-name").val(),
-					billingLastName: $("#billing-last-name").val(),
-					billingAddress1: $("#billing-address-1").val(),
-					billingAddress2: $("#billing-address-2").val(),
-					billingCity: $("#billing-city").val(),
-					billingState: $("#billing-state").val(),
-					billingZipcode: $("#billing-zipcode").val(),
-					deliveryFirstName: $("#delivery-first-name").val(),
-					deliveryLastName: $("#delivery-last-name").val(),
-					deliveryAddress1: $("#delivery-address-1").val(),
-					deliveryAddress2: $("#delivery-address-2").val(),
-					deliveryCity: $("#delivery-city").val(),
-					deliveryState: $("#delivery-state").val(),
-					deliveryZipcode: $("#delivery-zipcode").val(),
-					personalMessage: $("#personal-message").val()
-				}, function() {
-					hideLoader();
-					$("#success-image").attr("src", "img/flowers/" + localStorage.arrangementSelected + "_low.jpg");
-					$.mobile.changePage("#success", { transition: "fade" });
-				});
+				$("#confirm-arrangement-name").html(localStorage.arrangementName);
+				$("#confirm-arrangement-price").html("Arrangement Price: " + "$" + localStorage.arrangementPrice);
+				$("#confirm-personal-message").html($("#personal-message").val());
+				hideLoader();
+				$.mobile.changePage("#confirm", { transition: "slide" });
 			}
 		});
 	}
 }
 
+//Validate and submit entire order
+
+function submitOrder() {
+	showLoader();
+	
+	//Send the beast to the pits of the backend!
+	
+	$.post(localStorage.path_to_actions, {
+		userUuid: device.uuid,
+		arrangementSelected: localStorage.arrangementSelected,
+		arrangementPrice: localStorage.arrangementPrice,
+		paymentToken: localStorage.stripeToken,
+		saveBilling: $("#save-billing-address-button").prop("checked"),
+		saveDelivery: $("#save-delivery-address-button").prop("checked"),
+		billingFirstName: $("#billing-first-name").val(),
+		billingLastName: $("#billing-last-name").val(),
+		billingAddress1: $("#billing-address-1").val(),
+		billingAddress2: $("#billing-address-2").val(),
+		billingCity: $("#billing-city").val(),
+		billingState: $("#billing-state").val(),
+		billingZipcode: $("#billing-zipcode").val(),
+		deliveryFirstName: $("#delivery-first-name").val(),
+		deliveryLastName: $("#delivery-last-name").val(),
+		deliveryAddress1: $("#delivery-address-1").val(),
+		deliveryAddress2: $("#delivery-address-2").val(),
+		deliveryCity: $("#delivery-city").val(),
+		deliveryState: $("#delivery-state").val(),
+		deliveryZipcode: $("#delivery-zipcode").val(),
+		personalMessage: $("#personal-message").val()
+	}, function() {
+		hideLoader();
+		$.mobile.changePage("#success", { transition: "fade" });
+	});
+}
+
 //Select arrangement handler
 
-function selectArrange(arrangement, price) {
+function selectArrange(arrangement, price, name) {
 	localStorage.arrangementSelected = arrangement;
 	localStorage.arrangementPrice = price;
+	localStorage.arrangementName = name;
 	$.mobile.changePage("#billing", { transition: "fade" });
 }
 
@@ -474,7 +489,7 @@ $(document).on("pageshow", "#single", function() {
 		$("#single-flower-price").html("$" + flowerData["retail_price"]);
 		$("#single-flower-desc").html(flowerData["flower_description"]);
 		$("#single-flower-image").attr("src", localStorage.path_to_images  + flowerData["arrangement_code"] + "_low.jpg");
-		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"] + "', '" + flowerData["retail_price"] + "');");
+		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"] + "', '" + flowerData["retail_price"] + "', '" + flowerData["arrangement_name"] + "');");
 		$("#single-page-content").fadeIn();
 		hideLoader();
 	});

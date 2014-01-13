@@ -742,7 +742,7 @@
         	<textarea id="personal-message"></textarea>
         </div>
         <div class="margin-top-20 medium-button">
-        	<a href="#payment" data-role="button" data-theme="b" data-transition="slide">Last Step</a>
+        	<a href="#payment" data-role="button" data-theme="b" data-transition="slide">Payment</a>
         </div>
     </div>
     <div data-position="fixed" data-role="footer" data-theme="c">
@@ -830,7 +830,7 @@
         	<input id="payment-security-code" type="tel" />
         </div>
         <div class="margin-top-10 medium-button">
-        	<a onClick="submitOrder();" data-role="button" data-theme="b">Finish</a>
+        	<a onClick="confirmOrder();" data-role="button" data-theme="b">Last Step</a>
         </div>
     </div>
     <div data-position="fixed" data-role="footer" data-theme="c">
@@ -844,6 +844,74 @@
     </div>
 </div>
 <!--/Payment Page-->
+
+<!--Confirmation Page-->
+<div data-role="page" id="confirm">
+	<div data-role="header" data-theme="fmf">
+    	<a data-role="button" href="#payment" data-icon="arrow-l" data-iconpos="left" class="ui-btn-left" data-theme="b" data-transition="slide">Back</a>
+        <div class="clock-logo">
+        	<img src="img/logo-small.png" />
+        </div>
+    </div>
+    <div data-role="content">
+    	<div class="txt-center">
+        	<strong>Confirm Order</strong>
+        </div>
+        <div class="ui-grid-a margin-top-20 order-confirm-arrangement">
+            <div class="ui-block-a">
+                <div class="success-flower">
+                	<img src="" />
+                </div>
+            </div>
+            <div class="ui-block-b">
+            	<div>
+                	<strong>Arrangement Name:</strong>
+                </div>
+                <div id="confirm-arrangement-name" class="margin-top-10">
+                	<!--AUTOLOADER HERE-->
+                </div>
+            </div>
+        </div>
+    	<div class="ui-body ui-body-c ui-corner-all margin-top-30">
+        	<div>
+            	<strong>Total Charges:</strong>
+            </div>
+            <div id="confirm-arrangement-price" class="margin-top-10">
+            	<!--AUTOLOADER HERE-->
+            </div>
+            <div id="confirm-delivery-fee" class="margin-top-10">
+            	Delivery Fee: $29.99
+            </div>
+            <div id="confirm-tax" class="margin-top-10">
+            	Tax: $2.09
+            </div>
+            <div id="confirm-total" class="margin-top-10">
+            	<strong>Total: $35.99</strong>
+            </div>
+        </div>
+        <div class="ui-body ui-body-c ui-corner-all margin-top-30">
+        	<div>
+            	<strong>Personal Message:</strong>
+            </div>
+            <div id="confirm-personal-message" class="margin-top-10">
+            	I love you! Hope you have a great birthday!
+            </div>
+        </div>
+        <div class="margin-top-20 medium-button">
+        	<a data-role="button" data-theme="b" onClick="submitOrder();">Finish</a>
+        </div>
+    </div>
+    <div data-position="fixed" data-role="footer" data-theme="c">
+    	<div data-role="navbar">
+        	<ul>
+            	<li><a href="#index" data-icon="home">Home</a></li>
+                <li><a href="#wizard" data-icon="star">Wizard</a></li>
+                <li><a href="#account" data-icon="gear">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--/Confirmation Page-->
 
 <!--Success Page-->
 <div data-role="page" id="success">
@@ -860,7 +928,7 @@
         	Your order has been received and you will be receiving an email shortly with the order details.
         </h3>
         <div class="success-flower margin-top-10">
-        	<img id="success-image" src="" />
+        	<img src="" />
         </div>
         <div class="margin-top-20 medium-button">
         	<a onClick="completeOrder();" data-role="button" data-theme="b" data-transition="fade">Done</a>
