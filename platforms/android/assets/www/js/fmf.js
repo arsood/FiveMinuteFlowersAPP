@@ -62,6 +62,7 @@ $.post(localStorage.path_to_interface, {
 		var savedBillingInfo = $.parseJSON(ajaxData);
 		$(savedBillingInfo).each(function(index, element) {
 		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
+		   $("#payment-saved-billing").listview("refresh");
 		});
 	}
 });
@@ -77,7 +78,8 @@ $.post(localStorage.path_to_interface, {
 	} else {
 		var savedDeliveryInfo = $.parseJSON(ajaxData);
 		$(savedDeliveryInfo).each(function(index, element) {
-		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change"); 
+		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change");
+		   $("#payment-saved-delivery").listview("refresh"); 
 		});
 	}
 });
@@ -295,6 +297,7 @@ function confirmOrder() {
 		//Get Stripe token
 		
 		Stripe.card.createToken({
+			name: $("#billing-first-name").val() + " " + $("#billing-last-name").val(),
 			number: $('#payment-card-num').val(),
 			cvc: $('#payment-security-code').val(),
 			exp_month: $('#payment-expire-month').val(),
@@ -310,7 +313,16 @@ function confirmOrder() {
 				
 				$("#confirm-arrangement-name").html(localStorage.arrangementName);
 				$("#confirm-arrangement-price").html("Arrangement Price: " + "$" + localStorage.arrangementPrice);
-				$("#confirm-personal-message").html($("#personal-message").val());
+				
+				if ($("#personal-message").val() == "") {
+					$("#confirm-personal-message").html("N/A");
+				} else {
+					$("#confirm-personal-message").html($("#personal-message").val());
+				}
+				
+				var totalPrice = parseFloat(localStorage.arrangementPrice) + 6;
+				$("#confirm-total").html("<strong>Total: $" + totalPrice + "</strong>");
+				
 				hideLoader();
 				$.mobile.changePage("#confirm", { transition: "slide" });
 			}
@@ -346,7 +358,8 @@ function submitOrder() {
 		deliveryCity: $("#delivery-city").val(),
 		deliveryState: $("#delivery-state").val(),
 		deliveryZipcode: $("#delivery-zipcode").val(),
-		personalMessage: $("#personal-message").val()
+		personalMessage: $("#personal-message").val(),
+		deliveryInstructions: $("#delivery-instructions").val()
 	}, function() {
 		hideLoader();
 		$.mobile.changePage("#success", { transition: "fade" });
