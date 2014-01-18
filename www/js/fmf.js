@@ -59,6 +59,7 @@ $.post(localStorage.path_to_interface, {
 	if (ajaxData == "none") {
 		return false;
 	} else {
+		localStorage.savedBilling = ajaxData;
 		var savedBillingInfo = $.parseJSON(ajaxData);
 		$(savedBillingInfo).each(function(index, element) {
 		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>");
@@ -75,6 +76,7 @@ $.post(localStorage.path_to_interface, {
 	if (ajaxData == "none") {
 		return false;
 	} else {
+		localStorage.savedDelivery = ajaxData;
 		var savedDeliveryInfo = $.parseJSON(ajaxData);
 		$(savedDeliveryInfo).each(function(index, element) {
 		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>"); 
@@ -588,7 +590,7 @@ $("#personalized-back").click(function() {
 
 //Enter saved billing information into form from JSON array
 
-$("#payment-saved-billing").on("change", function(event) {
+$("#payment-saved-billing").on("change", function() {
 	if ($(this).val() == "") {
 		return false;
 	} else {
@@ -605,7 +607,7 @@ $("#payment-saved-billing").on("change", function(event) {
 
 //Enter saved delivery information into form from JSON array
 
-$("#payment-saved-delivery").on("change", function(event) {
+$("#payment-saved-delivery").on("change", function() {
 	if ($(this).val() == "") {
 		return false;
 	} else {
