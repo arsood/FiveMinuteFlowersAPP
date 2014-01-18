@@ -499,7 +499,7 @@ $(document).on("pageshow", "#single", function() {
 		$("#single-flower-price").html("$" + flowerData["retail_price"]);
 		$("#single-flower-desc").html(flowerData["flower_description"]);
 		$("#single-flower-image").attr("src", localStorage.path_to_images  + flowerData["arrangement_code"] + "_low.jpg");
-		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"] + "', '" + flowerData["retail_price"] + "', '" + flowerData["arrangement_name"] + "');");
+		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"].replace(/'/g, "") + "', '" + flowerData["retail_price"] + "', '" + flowerData["arrangement_name"] + "');");
 		$("#single-page-content").fadeIn();
 		hideLoader();
 	});
@@ -539,7 +539,7 @@ $(document).on("pageshow", "#personalized", function() {
 			$("#personalized-image-name").html(personalizedArray[0]["arrangement_name"]);
 			$("#personalized-image-price").html("$" + personalizedArray[0]["retail_price"]);
 			$("#personalized-image-desc").html(personalizedArray[0]["flower_description"]);
-			$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[0]["arrangement_code"] + "', '" + personalizedArray[0]["retail_price"] + "', '" + personalizedArray[0]["arrangement_name"] + "');");
+			$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[0]["arrangement_code"] + "', '" + personalizedArray[0]["retail_price"] + "', '" + personalizedArray[0]["arrangement_name"].replace(/'/g, "") + "');");
 			
 			//Show the personalization page
 			
@@ -565,7 +565,7 @@ $("#personalized-forward").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
-		$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "', '" + personalizedArray[newIndex]["arrangement_name"] + "');");
+		$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "', '" + personalizedArray[newIndex]["arrangement_name"].replace(/'/g, "") + "');");
 		$(".ajax-block").fadeOut();
 	}
 });
@@ -583,7 +583,7 @@ $("#personalized-back").click(function() {
 		$("#personalized-image-name").html(personalizedArray[newIndex]["arrangement_name"]);
 		$("#personalized-image-price").html("$" + personalizedArray[newIndex]["retail_price"]);
 		$("#personalized-image-desc").html(personalizedArray[newIndex]["flower_description"]);
-		$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "', '" + personalizedArray[newIndex]["arrangement_name"] + "');");
+		$("#personalized-select").attr("onClick", "selectArrange('" + personalizedArray[newIndex]["arrangement_code"] + "', '" + personalizedArray[newIndex]["retail_price"] + "', '" + personalizedArray[newIndex]["arrangement_name"].replace(/'/g, "") + "');");
 		$(".ajax-block").fadeOut();
 	}
 });
@@ -602,6 +602,9 @@ $("#payment-saved-billing").on("change", function() {
 		$("#billing-address-2").val(savedBillingInfo[currentIndex]["billing_address_2"]);
 		$("#billing-city").val(savedBillingInfo[currentIndex]["billing_city"]);
 		$("#billing-zipcode").val(savedBillingInfo[currentIndex]["billing_zipcode"]);
+		$("#billing-state").val(savedBillingInfo[currentIndex]["billing_state"]);
+		$("#billing-state option[value=" + savedBillingInfo[currentIndex]["billing_state"] + "]").attr("selected", "selected");
+		$("#billing-state").trigger("change");
 	}
 });
 
@@ -619,6 +622,9 @@ $("#payment-saved-delivery").on("change", function() {
 		$("#delivery-address-2").val(savedDeliveryInfo[currentIndex]["delivery_address_2"]);
 		$("#delivery-city").val(savedDeliveryInfo[currentIndex]["delivery_city"]);
 		$("#delivery-zipcode").val(savedDeliveryInfo[currentIndex]["delivery_zipcode"]);
+		$("#delivery-state").val(savedDeliveryInfo[currentIndex]["delivery_state"]);
+		$("#delivery-state option[value=" + savedDeliveryInfo[currentIndex]["delivery_state"] + "]").attr("selected", "selected");
+		$("#delivery-state").trigger("change");
 	}
 });
 
