@@ -61,8 +61,7 @@ $.post(localStorage.path_to_interface, {
 	} else {
 		var savedBillingInfo = $.parseJSON(ajaxData);
 		$(savedBillingInfo).each(function(index, element) {
-		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>").trigger("change"); 
-		   $("#payment-saved-billing").listview("refresh");
+		   $("#payment-saved-billing").append("<option value='" + index + "'>" + element["billing_address_1"] + ", " + element["billing_city"] + ", " + element["billing_state"] + "</option>");
 		});
 	}
 });
@@ -78,8 +77,7 @@ $.post(localStorage.path_to_interface, {
 	} else {
 		var savedDeliveryInfo = $.parseJSON(ajaxData);
 		$(savedDeliveryInfo).each(function(index, element) {
-		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>").trigger("change");
-		   $("#payment-saved-delivery").listview("refresh"); 
+		   $("#payment-saved-delivery").append("<option value='" + index + "'>" + element["delivery_first_name"] + " " + element["delivery_last_name"] + "</option>"); 
 		});
 	}
 });

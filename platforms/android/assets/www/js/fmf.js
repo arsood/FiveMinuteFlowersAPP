@@ -321,7 +321,7 @@ function confirmOrder() {
 				}
 				
 				var totalPrice = parseFloat(localStorage.arrangementPrice) + 6;
-				$("#confirm-total").html("<strong>Total: $" + totalPrice + "</strong>");
+				$("#confirm-total").html("<strong>Total: $" + totalPrice.toFixed(2) + "</strong>");
 				
 				hideLoader();
 				$.mobile.changePage("#confirm", { transition: "slide" });
