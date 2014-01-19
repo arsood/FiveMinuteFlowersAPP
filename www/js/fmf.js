@@ -420,20 +420,29 @@ function removeBill(id) {
 
 //Change email address on file
 
-function changeEmail() {
+function updateEmail() {
 	showLoader();
 	
 	var newEmail = $("#account-new-email").val();
 	
-	$.post(localStorage.path_to_interface, {
-		method: "write",
-		action: "update-email",
-		userUuid: device.uuid,
-		updatedEmail: newEmail
-	}, function() {
+	var atpos = newEmail.indexOf("@");
+	var dotpos = newEmail.lastIndexOf(".");
+	
+	if (atpos<1 || dotpos < atpos + 2 || dotpos + 2 >= newEmail.length) {
 		hideLoader();
-		alert("Success! Your email has been changed");
-	});
+		alert("Please enter a valid email address");
+		return false;
+	} else {
+		$.post(localStorage.path_to_interface, {
+			method: "write",
+			action: "update-email",
+			userUuid: device.uuid,
+			updatedEmail: newEmail
+		}, function() {
+			hideLoader();
+			alert("Success! Your email has been changed");
+		});
+	}
 }
 
 /*
@@ -517,7 +526,7 @@ $(document).on("pageshow", "#single", function() {
 		$("#single-flower-price").html("$" + flowerData["retail_price"]);
 		$("#single-flower-desc").html(flowerData["flower_description"]);
 		$("#single-flower-image").attr("src", localStorage.path_to_images  + flowerData["arrangement_code"] + "_low.jpg");
-		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"].replace(/'/g, "") + "', '" + flowerData["retail_price"] + "', '" + flowerData["arrangement_name"] + "');");
+		$("#single-select").attr("onClick", "selectArrange('" + flowerData["arrangement_code"] + "', '" + flowerData["retail_price"] + "', '" + flowerData["arrangement_name"].replace(/'/g, "") + "');");
 		$("#single-page-content").fadeIn();
 		hideLoader();
 	});
