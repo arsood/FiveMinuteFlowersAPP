@@ -521,7 +521,7 @@
                     	<strong>Billing Zipcode</strong>
                     </div>
                     <div>
-                    	<input id="billing-zipcode" type="text" />
+                    	<input id="billing-zipcode" type="tel" />
                     </div>
                 </div>
                 <div class="ui-block-b padding-left-5">
@@ -689,7 +689,7 @@
                     	<strong>Delivery Zipcode</strong>
                     </div>
                     <div>
-                    	<input id="delivery-zipcode" type="text" />
+                    	<input id="delivery-zipcode" type="tel" />
                     </div>
                 </div>
                 <div class="ui-block-b padding-left-5">
@@ -965,6 +965,15 @@
         </div>
         <div id="account-billing" class="margin-top-30">
             <!--AUTOLOADER HERE-->
+        </div>
+        <div class="margin-top-30 txt-center">
+        	<strong>Change Email Address</strong>
+        </div>
+        <div class="margin-top-10">
+        	<input id="account-new-email" type="email" placeholder="Enter new email address" />
+        </div>
+        <div class="margin-top-10 small-button">
+        	<a onClick="updateEmail();" data-role="button" data-mini="true">Update</a>
         </div>
     </div>
     <div data-position="fixed" data-role="footer" data-theme="c">

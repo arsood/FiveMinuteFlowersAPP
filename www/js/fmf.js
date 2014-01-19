@@ -418,6 +418,24 @@ function removeBill(id) {
 	}
 }
 
+//Change email address on file
+
+function changeEmail() {
+	showLoader();
+	
+	var newEmail = $("#account-new-email").val();
+	
+	$.post(localStorage.path_to_interface, {
+		method: "write",
+		action: "update-email",
+		userUuid: device.uuid,
+		updatedEmail: newEmail
+	}, function() {
+		hideLoader();
+		alert("Success! Your email has been changed");
+	});
+}
+
 /*
 This document loads all pages and handles all of the buttloads of AJAX calls :P
 */

@@ -5,7 +5,7 @@ localStorage.path_to_interface = "http://fiveminuteflowers.com/api/ajax_interfac
 localStorage.path_to_layouts = "http://fiveminuteflowers.com/api/page_layouts.php";
 localStorage.path_to_images = "img/flowers/";
 
-document.addEventListener("deviceready", onDeviceReady, true);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	
@@ -416,6 +416,24 @@ function removeBill(id) {
 			$("#account-billing").trigger("change");
 		});
 	}
+}
+
+//Change email address on file
+
+function changeEmail() {
+	showLoader();
+	
+	var newEmail = $("#account-new-email").val();
+	
+	$.post(localStorage.path_to_interface, {
+		method: "write",
+		action: "update-email",
+		userUuid: device.uuid,
+		updatedEmail: newEmail
+	}, function() {
+		hideLoader();
+		alert("Success! Your email has been changed");
+	});
 }
 
 /*
