@@ -5,7 +5,7 @@ localStorage.path_to_interface = "http://fiveminuteflowers.com/api/ajax_interfac
 localStorage.path_to_layouts = "http://fiveminuteflowers.com/api/page_layouts.php";
 localStorage.path_to_images = "img/flowers/";
 
-document.addEventListener("deviceready", onDeviceReady, true);
+document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
 	
