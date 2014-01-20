@@ -251,7 +251,8 @@ function submitBilling() {
 		$("#billing-address-1").val() == "" ||
 		$("#billing-city").val() == "" ||
 		$("#billing-state").val() == "" ||
-		$("#billing-zipcode").val() == ""
+		$("#billing-zipcode").val() == "" ||
+		$("#billing-phone-number").val() == ""
 	) {
 		alert("Please enter all information");
 		return false;
@@ -271,7 +272,8 @@ function submitDelivery() {
 		$("#delivery-address-1").val() == "" ||
 		$("#delivery-city").val() == "" ||
 		$("#delivery-state").val() == "" ||
-		$("#delivery-zipcode").val() == ""
+		$("#delivery-zipcode").val() == "" ||
+		$("#delivery-phone-number").val() == ""
 	) {
 		alert("Please enter all information");
 		return false;
@@ -351,6 +353,7 @@ function submitOrder() {
 		billingCity: $("#billing-city").val(),
 		billingState: $("#billing-state").val(),
 		billingZipcode: $("#billing-zipcode").val(),
+		billingPhone: $("#billing-phone-number").val(),
 		deliveryFirstName: $("#delivery-first-name").val(),
 		deliveryLastName: $("#delivery-last-name").val(),
 		deliveryAddress1: $("#delivery-address-1").val(),
@@ -358,6 +361,7 @@ function submitOrder() {
 		deliveryCity: $("#delivery-city").val(),
 		deliveryState: $("#delivery-state").val(),
 		deliveryZipcode: $("#delivery-zipcode").val(),
+		deliveryPhone: $("#delivery-phone-number").val(),
 		personalMessage: $("#personal-message").val(),
 		deliveryInstructions: $("#delivery-instructions").val()
 	}, function() {
@@ -394,8 +398,10 @@ function removeRec(id) {
 			action: "remove-recipient",
 			recId: id
 		}, function() {
-			$("#saved-rec-" + id).fadeOut();
-			$("#account-recipients").trigger("change");
+			$("#saved-rec-" + id).fadeOut("slow", "swing", function() {
+				$("#account-recipients").trigger("change");
+				location.reload();
+			});
 		});
 	}
 }
@@ -412,8 +418,10 @@ function removeBill(id) {
 			action: "remove-billing",
 			billId: id
 		}, function() {
-			$("#saved-bill-" + id).fadeOut();
-			$("#account-billing").trigger("change");
+			$("#saved-bill-" + id).fadeOut("slow", "swing", function() {
+				$("#account-billing").trigger("change");
+				location.reload();
+			});
 		});
 	}
 }
@@ -630,6 +638,7 @@ $("#payment-saved-billing").on("change", function() {
 		$("#billing-city").val(savedBillingInfo[currentIndex]["billing_city"]);
 		$("#billing-zipcode").val(savedBillingInfo[currentIndex]["billing_zipcode"]);
 		$("#billing-state").val(savedBillingInfo[currentIndex]["billing_state"]);
+		$("#billing-phone-number").val(savedBillingInfo[currentIndex]["billing_phone"]);
 		$("#billing-state option[value=" + savedBillingInfo[currentIndex]["billing_state"] + "]").attr("selected", "selected");
 		$("#billing-state").trigger("change");
 	}
@@ -650,6 +659,7 @@ $("#payment-saved-delivery").on("change", function() {
 		$("#delivery-city").val(savedDeliveryInfo[currentIndex]["delivery_city"]);
 		$("#delivery-zipcode").val(savedDeliveryInfo[currentIndex]["delivery_zipcode"]);
 		$("#delivery-state").val(savedDeliveryInfo[currentIndex]["delivery_state"]);
+		$("#delivery-phone-number").val(savedDeliveryInfo[currentIndex]["delivery_phone"]);
 		$("#delivery-state option[value=" + savedDeliveryInfo[currentIndex]["delivery_state"] + "]").attr("selected", "selected");
 		$("#delivery-state").trigger("change");
 	}
